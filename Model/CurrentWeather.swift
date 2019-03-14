@@ -22,6 +22,10 @@ class CurrentWeather{
     private var _minWeatherTemperature:Double!
     private var _maxWeatherTemperature:Double!
     
+    private var _pressure: Int!
+    private var _humidity: Int!
+    private var _speed: Int!
+
     
     // MARK: Public weather properties.
     
@@ -88,6 +92,27 @@ class CurrentWeather{
         return _maxWeatherTemperature
     }
     
+    var speed: Int{
+        if _speed == nil{
+            _speed = 0
+        }
+        return _speed
+    }
+    
+    var pressure:Int{
+        if _pressure == nil{
+            _pressure = 0
+        }
+        return _pressure
+    }
+    
+    var humidity:Int{
+        if _humidity == nil{
+            _humidity = 0
+        }
+        return _humidity
+    }
+    
     // MARK: use Alamofire
     
     func downloadWeatherDetails(completed: @escaping DownloadComplete){
@@ -107,38 +132,51 @@ class CurrentWeather{
                 if let weather = dict["weather"] as? [Dictionary<String,Any>]{
                     if let main = weather[0]["main"] as? String{
                         self._weatherType = main.capitalized
-                        //print(self._weatherType)
-
                     }
-                    /*if let description = weather[0]["description"] as? String{
-                        self._imageWeather = description.capitalized
-                    }*/
                 }
                 
-                // MARK: Get weather temperature.
+                // MARK: Get weather properties.
                 if let main = dict["main"] as? Dictionary<String, Any>{
                     if let currenTemp = main["temp"] as? Double {
                         
                         let getTemperature = (currenTemp * (9/5) - 459.67)
                         let kelvinToFarinhate = Double(round(10 * getTemperature/10))
                         self._currentTemperature = kelvinToFarinhate
-                        //print(self._currentTemperature)
-
                     }
+                    
                     if let minTemp = main["temp_min"] as? Double{
                         let getTemperature = (minTemp * (9/5) - 459.67)
                         let kelvinToFarinhate = Double(round(10 * getTemperature/10))
                         self._minWeatherTemperature = kelvinToFarinhate
                     }
+                    
                     if let maxTemp = main["temp_max"] as? Double{
                         let getTemperature = (maxTemp * (9/5) - 459.67)
                         let kelvinToFarinhate = Double(round(10 * getTemperature/10))
                         self._maxWeatherTemperature = kelvinToFarinhate
                     }
+                    
+                    if let pressure = main["pressure"] as? Int{
+                        self._pressure = pressure
+                        print("_pressure\(self._pressure)")
+                    }
+                    
+                    if let humidity = main["humidity"] as? Int{
+                        self._humidity = humidity
+                        print("_humidity \(self._humidity)")
+
+                    }
+                }
+                
+                // MARK: Get wind.
+                if let wind = dict["wind"] as? Dictionary<String,Any>{
+                    if let speed = wind["speed"] as? Double{
+                        self._speed = Int(speed)
+                        print("_speed \(self._speed)")
+                    }
                 }
             }
             completed()
-
         }
     }
 }
