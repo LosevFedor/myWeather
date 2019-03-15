@@ -16,6 +16,12 @@ class CurrentForecastVC: UIViewController {
     @IBOutlet var descriptionWeather: UILabel!
     @IBOutlet var maxTemperature: UILabel!
     @IBOutlet var minTemperature: UILabel!
+    @IBOutlet var date: UILabel!
+    @IBOutlet var windSpeed: UILabel!
+    @IBOutlet var humidity: UILabel!
+    @IBOutlet var pressure: UILabel!
+    
+    
     
     var currentWeather: CurrentWeather!
     
@@ -36,6 +42,10 @@ class CurrentForecastVC: UIViewController {
         descriptionWeather.text = currentWeather.weatherType
         maxTemperature.text = "\(currentWeather.maxWeatherTemperature)"
         minTemperature.text = "\(currentWeather.minWeatherTemperature)"
+        date.text = currentWeather.date
+        windSpeed.text = "\(currentWeather.speed)"
+        humidity.text = "\(currentWeather.humidity)"
+        pressure.text = "\(currentWeather.pressure)"
     }
     
     
