@@ -158,12 +158,12 @@ class CurrentWeather{
                     
                     if let pressure = main["pressure"] as? Int{
                         self._pressure = pressure
-                        print("_pressure\(self._pressure)")
+                        //print("_pressure\(self._pressure)")
                     }
                     
                     if let humidity = main["humidity"] as? Int{
                         self._humidity = humidity
-                        print("_humidity \(self._humidity)")
+                        //print("_humidity \(self._humidity)")
 
                     }
                 }
@@ -172,7 +172,7 @@ class CurrentWeather{
                 if let wind = dict["wind"] as? Dictionary<String,Any>{
                     if let speed = wind["speed"] as? Double{
                         self._speed = Int(speed)
-                        print("_speed \(self._speed)")
+                        //print("_speed \(self._speed)")
                     }
                 }
             }

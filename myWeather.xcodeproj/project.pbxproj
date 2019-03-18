@@ -20,6 +20,7 @@
 		84D5132D222FE3BF006CA7D9 /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5132C222FE3BF006CA7D9 /* ContainerVC.swift */; };
 		84D5132F222FE7C7006CA7D9 /* ForecastHourlyTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D5132E222FE7C7006CA7D9 /* ForecastHourlyTVC.swift */; };
 		84D51331222FE872006CA7D9 /* ForecastTenDaysTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D51330222FE872006CA7D9 /* ForecastTenDaysTVC.swift */; };
+		84FDEFA3223F37BF00D0B327 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FDEFA2223F37BF00D0B327 /* Location.swift */; };
 		AC6244D75E49DA364DB0BBB1 /* Pods_myWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8920B18F546009708D406BA1 /* Pods_myWeather.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		84D5132C222FE3BF006CA7D9 /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
 		84D5132E222FE7C7006CA7D9 /* ForecastHourlyTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastHourlyTVC.swift; sourceTree = "<group>"; };
 		84D51330222FE872006CA7D9 /* ForecastTenDaysTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTenDaysTVC.swift; sourceTree = "<group>"; };
+		84FDEFA2223F37BF00D0B327 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		8920B18F546009708D406BA1 /* Pods_myWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECBFEDAE64E625FE53CF3889 /* Pods-myWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myWeather.debug.xcconfig"; path = "Target Support Files/Pods-myWeather/Pods-myWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		FE1487088F269076E90C9D78 /* Pods-myWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myWeather.release.xcconfig"; path = "Target Support Files/Pods-myWeather/Pods-myWeather.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			children = (
 				8458F05D223606F600B1E5D1 /* CurrentWeather.swift */,
 				84D5132A222D5C53006CA7D9 /* Settings.swift */,
+				84FDEFA2223F37BF00D0B327 /* Location.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84D5132D222FE3BF006CA7D9 /* ContainerVC.swift in Sources */,
+				84FDEFA3223F37BF00D0B327 /* Location.swift in Sources */,
 				84D51314222D4140006CA7D9 /* CurrentForecastVC.swift in Sources */,
 				84D51329222D5BBD006CA7D9 /* AddSityVC.swift in Sources */,
 				84D51312222D413F006CA7D9 /* AppDelegate.swift in Sources */,
@@ -347,7 +351,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -401,7 +405,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
