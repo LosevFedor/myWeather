@@ -36,7 +36,6 @@ class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
         currentWeather = CurrentWeather()
 
         locationManager.delegate = self
-        
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startMonitoringSignificantLocationChanges()
@@ -59,11 +58,13 @@ class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
             Location.sharedInstance.latitude = currentLocation.coordinate.latitude
             Location.sharedInstance.longitude = currentLocation.coordinate.longitude
             
-            //print("longitude\(currentLocation.coordinate.longitude) latitude\(currentLocation.coordinate.latitude)")
+            print("longitude \(currentLocation.coordinate.longitude) latitude \(currentLocation.coordinate.latitude)")
             //print(CURRENT_WEATHER_URL)
             currentWeather.downloadWeatherDetails {
                 self.currentWeatherToday()
             }
+            //locationManager.stopUpdatingLocation()
+            
         }else{
             //locationManager.requestWhenInUseAuthorization()
             //locationAuthStatus()
@@ -79,7 +80,7 @@ class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
     func currentWeatherToday(){
         sity.text = currentWeather.sityName
         sityTemperature.text = "\(currentWeather.currentTemperature)"
-        imageWeather.image = UIImage(named: currentWeather.weatherType)
+        imageWeather.image = UIImage(named: currentWeather.imageWeather)
         descriptionWeather.text = currentWeather.weatherType
         maxTemperature.text = "\(currentWeather.maxWeatherTemperature)"
         minTemperature.text = "\(currentWeather.minWeatherTemperature)"
