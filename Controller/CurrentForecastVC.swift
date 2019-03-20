@@ -58,7 +58,7 @@ class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
             Location.sharedInstance.latitude = currentLocation.coordinate.latitude
             Location.sharedInstance.longitude = currentLocation.coordinate.longitude
             
-            print("longitude \(currentLocation.coordinate.longitude) latitude \(currentLocation.coordinate.latitude)")
+            //print("longitude \(currentLocation.coordinate.longitude) latitude \(currentLocation.coordinate.latitude)")
             //print(CURRENT_WEATHER_URL)
             currentWeather.downloadWeatherDetails {
                 self.currentWeatherToday()
@@ -88,6 +88,7 @@ class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
         windSpeed.text = "\(currentWeather.speed)"
         humidity.text = "\(currentWeather.humidity)"
         pressure.text = "\(currentWeather.pressure)"
+        
     }
     
 }

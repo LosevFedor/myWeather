@@ -19,6 +19,23 @@ class SettingsVC: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func setTypeTemperature(_ sender: UISegmentedControl) {
+        var e = true
+        switch (sender.selectedSegmentIndex) {
+        case 0:
+            //let degrees = Temperature()
+            //degrees.сelsius
+            e = true
+        case 1:
+            //let degrees = Temperature()
+            //degrees.fahrenheit
+            e = false
+        default:
+            print("error temperature type")
+        }
+        print(e)
+    }
+    
     override var prefersStatusBarHidden: Bool{
         return true
     }
