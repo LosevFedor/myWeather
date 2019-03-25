@@ -7,33 +7,44 @@
 //
 
 import UIKit
+import CoreData
 
 class SettingsVC: UIViewController {
 
-    @IBAction func done(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
+    private let coreDataStack = CoreDataStack()
+    private var typeTemperature = "сelsius"
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Do any additional setup after loading the view.
     }
-
-    @IBAction func setTypeTemperature(_ sender: UISegmentedControl) {
-        var e = true
+    
+    @IBAction func done(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func setUpTemperature(_ sender: UISegmentedControl) {
         switch (sender.selectedSegmentIndex) {
         case 0:
-            //let degrees = Temperature()
-            //degrees.сelsius
-            e = true
+            typeTemperature = "сelsius"
         case 1:
-            //let degrees = Temperature()
-            //degrees.fahrenheit
-            e = false
+            typeTemperature = "fahrenheit"
         default:
             print("error temperature type")
         }
-        print(e)
+        //print("UISegmentedControl \(e)")
+    }
+    
+    @IBAction func saveChanges(_ sender: Any) {
+        
+        ///coreDataStack.saveChangesToData(typeTemperature, keyTemperature)
+        
+        coreDataStack.loadData("temperature")
+        
+        dismiss(animated: true, completion: nil)
     }
     
     override var prefersStatusBarHidden: Bool{

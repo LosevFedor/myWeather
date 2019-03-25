@@ -45,15 +45,15 @@ class Settings {
     }
     
     // MARK: Property get temperature from CoreData.
-    var specifiedTemperature: String {
+    /*var specifiedTemperature: String {
         get{
              _specifiedTemperature = temperatureData()
             return _specifiedTemperature
         }
-    }
+    }*/
 
     // MARK: Return converted temperature.
-    func convertDegrees(currenKelvinTemp:Double) -> Double{
+    /*func convertDegrees(currenKelvinTemp:Double) -> Double{
         
         var typeOfDegrees = 0.0
         
@@ -67,14 +67,14 @@ class Settings {
         }
         
         return typeOfDegrees
-    }
+    }*/
     
     
     // MARK: Get type of temperature from CoreData.
-    private func temperatureData() -> String{
+    //private func temperatureData() -> String{
         
         
-    }
+    //}
     
     
 }

@@ -9,15 +9,30 @@
 import UIKit
 import CoreData
 
+let keyTemperature = "temperature"
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
 
+    private let coreDataStack = CoreDataStack()
+    private let defaultTemperature = "сelsius"
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        return true
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        if launchedBefore  {
+            print("Not first launch.")
+        } else {
+            
+            coreDataStack.saveChangesToData(defaultTemperature, keyTemperature)
+            print("First launch, setting UserDefault.")
+            UserDefaults.standard.set(true, forKey: "launchedBefore")
+        }
+        return launchedBefore
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -34,33 +49,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
     }
-
-    // MARK: - Core Data stack
-    lazy var persistentContainer: NSPersistentContainer = {
-        
-        let container = NSPersistentContainer(name: "myWeather")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
-                
-                fatalError("Unresolved error \(error), \(error.userInfo)")
-            }
-        })
-        return container
-    }()
     
-    // MARK: - Core Data Saving support
-    
-    func saveContext () {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
-        }
-    }
-
 }
 

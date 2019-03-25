@@ -497,7 +497,7 @@
                                                             <segment title="˚F"/>
                                                         </segments>
                                                         <connections>
-                                                            <action selector="setTypeTemperature:" destination="lqm-eD-JTO" eventType="valueChanged" id="wxL-fI-C4Y"/>
+                                                            <action selector="setUpTemperature:" destination="lqm-eD-JTO" eventType="valueChanged" id="wxL-fI-C4Y"/>
                                                         </connections>
                                                     </segmentedControl>
                                                 </subviews>
@@ -584,6 +584,7 @@
                                         </state>
                                         <connections>
                                             <action selector="done:" destination="lqm-eD-JTO" eventType="touchUpInside" id="pa9-oY-lEO"/>
+                                            <action selector="saveChanges:" destination="lqm-eD-JTO" eventType="touchUpInside" id="dpX-1S-rC8"/>
                                         </connections>
                                     </button>
                                 </subviews>
