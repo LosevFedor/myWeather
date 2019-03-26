@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private let coreDataStack = CoreDataStack()
     private let defaultTemperature = "сelsius"
-    private let defaultSelectTemp = "0"
+    private let defaultSelectTemp = 0
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
@@ -56,8 +56,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let entiti = NSEntityDescription.entity(forEntityName: "SettingsTable", in: context)
         
         let changeParameter = NSManagedObject(entity: entiti!, insertInto: context)
-        changeParameter.setValue(defaultTemperature, forKey: "temperature")
-        changeParameter.setValue(defaultSelectTemp, forKey: "selectTemp")
+        changeParameter.setValue(defaultTemperature, forKey: keyTemperature)
+        changeParameter.setValue(defaultSelectTemp, forKey: keySelectTemp)
         coreDataStack.save()
         
     }

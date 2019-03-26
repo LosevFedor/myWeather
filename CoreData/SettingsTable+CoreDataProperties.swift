@@ -17,7 +17,7 @@ extension SettingsTable {
         return NSFetchRequest<SettingsTable>(entityName: "SettingsTable")
     }
 
+    @NSManaged public var selectTemp: Int16
     @NSManaged public var temperature: String?
-    @NSManaged public var selectTemp: String?
 
 }

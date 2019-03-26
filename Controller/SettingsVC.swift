@@ -13,13 +13,13 @@ class SettingsVC: UIViewController {
 
     private let coreDataStack = CoreDataStack()
     private var typeTemperature:String!
-    private var selectTemp:String!
+    private var selectTemp:Int!
     @IBOutlet var numberOfSegment: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
-        numberOfSegment.selectedSegmentIndex = Int(selectTemp)!
+        numberOfSegment.selectedSegmentIndex = selectTemp
         
         // Do any additional setup after loading the view.
     }
@@ -30,11 +30,11 @@ class SettingsVC: UIViewController {
         case 0:
             //numberOfSegment = sender.selectedSegmentIndex
             typeTemperature = "сelsius"
-            selectTemp = "0"
+            selectTemp = 0
             //sender.
         case 1:
             typeTemperature = "fahrenheit"
-            selectTemp = "1"
+            selectTemp = 1
         default:
             print("error temperature type")
         }
@@ -59,8 +59,8 @@ class SettingsVC: UIViewController {
         do{
             settingsTable = try context.fetch(request)
             for data in settingsTable {
-                selectTemp = data.value(forKey: "selectTemp") as? String
-                typeTemperature = data.value(forKey: "temperature") as? String
+                selectTemp = data.value(forKey: keySelectTemp) as? Int
+                typeTemperature = data.value(forKey: keyTemperature) as? String
             }
             //print("\(selectTemp) \(typeTemperature)")
         }catch{
@@ -72,8 +72,8 @@ class SettingsVC: UIViewController {
         let entiti = NSEntityDescription.entity(forEntityName: "SettingsTable", in: context)
         
         let changeParameter = NSManagedObject(entity: entiti!, insertInto: context)
-        changeParameter.setValue(typeTemperature, forKey: "temperature")
-        changeParameter.setValue(selectTemp, forKey: "selectTemp")
+        changeParameter.setValue(typeTemperature, forKey: keyTemperature)
+        changeParameter.setValue(selectTemp, forKey: keySelectTemp)
         coreDataStack.save()
         
     }
