@@ -15,32 +15,43 @@ let context = CoreDataStack().persistentContainer.viewContext
 class CoreDataStack{
     
     
-    func loadData(_ key: String){
-        
+    /*lazy var fethcResultController:NSFetchedResultsController<SettingsTable> = {
         let request: NSFetchRequest<SettingsTable> = SettingsTable.fetchRequest()
-        do{
-            settingsTable = try context.fetch(request)
-            for data in settingsTable {
-                print(data.value(forKey: key)!)
+        let controller = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        return controller
+    }()*/
+    
+    
+    func save(){
+        if context.hasChanges{
+            do{
+                try context.save()
+                print("Save sacsesfully")
+            }catch{
+                print("Fatal error: \(error.localizedDescription)")
             }
-            
-        }catch{
-            print("Error fetch SettingsParameters objects \(error.localizedDescription)")
         }
     }
     
-    func saveChangesToData(_ value: String, _ key: String){
-        
-        let entiti = NSEntityDescription.entity(forEntityName: "SettingsTable", in: context)
-        let changeParameter = NSManagedObject(entity: entiti!, insertInto: context)
-        changeParameter.setValue(value, forKey: key)
-        do{
-            try context.save()
-        }catch{
-            print("Faill saved to coredata")
-        }
+    private func delete(_ object: NSManagedObject){
+        context.delete(object)
+        save()
     }
 
+    func deleteParameters(){
+        let typeTemp = settingsTable
+        for deletFerst in typeTemp{
+            delete(deletFerst)
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentContainer = {
         
