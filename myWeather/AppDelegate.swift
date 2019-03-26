@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 let keyTemperature = "temperature"
-
+let keySelectTemp = "selectTemp"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private let coreDataStack = CoreDataStack()
     private let defaultTemperature = "сelsius"
+    private let defaultSelectTemp = "0"
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
@@ -28,7 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Not first launch.")
         } else {
             
-            coreDataStack.saveChangesToData(defaultTemperature, keyTemperature)
+            saveDefaultSettings()
+            
             print("First launch, setting UserDefault.")
             UserDefaults.standard.set(true, forKey: "launchedBefore")
         }
@@ -50,5 +52,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
     }
     
+    private func saveDefaultSettings(){
+        let entiti = NSEntityDescription.entity(forEntityName: "SettingsTable", in: context)
+        
+        let changeParameter = NSManagedObject(entity: entiti!, insertInto: context)
+        changeParameter.setValue(defaultTemperature, forKey: "temperature")
+        changeParameter.setValue(defaultSelectTemp, forKey: "selectTemp")
+        coreDataStack.save()
+        
+    }
 }
 

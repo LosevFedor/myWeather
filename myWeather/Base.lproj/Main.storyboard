@@ -497,7 +497,7 @@
                                                             <segment title="˚F"/>
                                                         </segments>
                                                         <connections>
-                                                            <action selector="setUpTemperature:" destination="lqm-eD-JTO" eventType="valueChanged" id="wxL-fI-C4Y"/>
+                                                            <action selector="setUpTemperature:" destination="lqm-eD-JTO" eventType="valueChanged" id="2PG-kF-3rw"/>
                                                         </connections>
                                                     </segmentedControl>
                                                 </subviews>
@@ -583,7 +583,6 @@
                                             <color key="titleColor" red="1" green="1" blue="0.93853646516799927" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="done:" destination="lqm-eD-JTO" eventType="touchUpInside" id="pa9-oY-lEO"/>
                                             <action selector="saveChanges:" destination="lqm-eD-JTO" eventType="touchUpInside" id="dpX-1S-rC8"/>
                                         </connections>
                                     </button>
@@ -608,6 +607,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HNW-aH-0oo"/>
                     </view>
+                    <connections>
+                        <outlet property="numberOfSegment" destination="g0p-Yx-eJS" id="XdB-0U-WKe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="giZ-5I-SqV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

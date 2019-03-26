@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18A391" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="SettingsTable" representedClassName=".SettingsTable" syncable="YES">
-        <attribute name="temperature" attributeType="String" syncable="YES"/>
+        <attribute name="selectTemp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="temperature" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="SettingsTable" positionX="-36" positionY="9" width="128" height="58"/>
+        <element name="SettingsTable" positionX="-36" positionY="9" width="128" height="73"/>
     </elements>
 </model>
