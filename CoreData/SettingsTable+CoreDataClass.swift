@@ -2,7 +2,7 @@
 //  SettingsTable+CoreDataClass.swift
 //  myWeather
 //
-//  Created by admin on 23/03/2019.
+//  Created by admin on 25/03/2019.
 //  Copyright © 2019 admin. All rights reserved.
 //
 //

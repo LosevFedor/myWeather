@@ -2,7 +2,7 @@
 //  SettingsTable+CoreDataProperties.swift
 //  myWeather
 //
-//  Created by admin on 23/03/2019.
+//  Created by admin on 26/03/2019.
 //  Copyright © 2019 admin. All rights reserved.
 //
 //
@@ -14,11 +14,10 @@ import CoreData
 extension SettingsTable {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<SettingsTable> {
-        let request = NSFetchRequest<SettingsTable>(entityName: "SettingsTable")
-        request.sortDescriptors = [NSSortDescriptor(key: "temperature", ascending: true)]
-        return request
+        return NSFetchRequest<SettingsTable>(entityName: "SettingsTable")
     }
 
-    @NSManaged public var temperature: String
+    @NSManaged public var temperature: String?
+    @NSManaged public var selectTemp: String?
 
 }
