@@ -26,10 +26,8 @@ class CurrentWeather{
     private var _humidity: Int!
     private var _speed: Int!
 
+    private let settings = Settings()
     
-    // MARK: Public weather properties.
-    
-    // geted it
     var sityName:String{
         if _sityName == nil{
              _sityName = ""
@@ -113,6 +111,7 @@ class CurrentWeather{
         return _humidity
     }
     
+    
     // MARK: use Alamofire
     
     func downloadWeatherDetails(completed: @escaping DownloadComplete){
@@ -140,21 +139,29 @@ class CurrentWeather{
                 if let main = dict["main"] as? Dictionary<String, Any>{
                     if let currenTemp = main["temp"] as? Double {
                         
-                        let getTemperature = (currenTemp * (9/5) - 459.67)
-                        let kelvinToFarinhate = Double(round(10 * getTemperature/10))
-                        self._currentTemperature = kelvinToFarinhate
+                        if self.settings.typeTemperature == "fahrenheit"{
+                            self._currentTemperature = setFarinhaitDegree(currenTemp)
+                        }
+                        else{
+                            self._currentTemperature = setCelsiumDegree(currenTemp)
+                        }
                     }
                     
                     if let minTemp = main["temp_min"] as? Double{
-                        let getTemperature = (minTemp * (9/5) - 459.67)
-                        let kelvinToFarinhate = Double(round(10 * getTemperature/10))
-                        self._minWeatherTemperature = kelvinToFarinhate
+                        if self.settings.typeTemperature == "fahrenheit"{
+                            self._minWeatherTemperature = setFarinhaitDegree(minTemp)
+                        }else{
+                            self._minWeatherTemperature = setCelsiumDegree(minTemp)
+                        }
+
                     }
                     
                     if let maxTemp = main["temp_max"] as? Double{
-                        let getTemperature = (maxTemp * (9/5) - 459.67)
-                        let kelvinToFarinhate = Double(round(10 * getTemperature/10))
-                        self._maxWeatherTemperature = kelvinToFarinhate
+                        if self.settings.typeTemperature == "fahrenheit"{
+                            self._maxWeatherTemperature = setFarinhaitDegree(maxTemp)
+                        }else{
+                            self._maxWeatherTemperature = setCelsiumDegree(maxTemp)
+                        }
                     }
                     
                     if let pressure = main["pressure"] as? Int{
@@ -179,3 +186,14 @@ class CurrentWeather{
 }
 
 
+func setFarinhaitDegree ( _ currenKelvinTemp:Double) -> Double{
+    let getTemperature = (currenKelvinTemp * (9/5) - 459.67)
+    let _fahrenheit = Double(round(10 * getTemperature/10))
+    return _fahrenheit
+}
+
+func setCelsiumDegree( _ currenKelvinTemp:Double) -> Double{
+    let getTemperature = (currenKelvinTemp - 273.15)
+    let _сelsius = Double(round(10 * getTemperature/10))
+    return _сelsius
+}

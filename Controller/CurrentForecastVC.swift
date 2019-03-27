@@ -63,7 +63,7 @@ class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
             currentWeather.downloadWeatherDetails {
                 self.currentWeatherToday()
             }
-            //locationManager.stopUpdatingLocation()
+            locationManager.stopUpdatingLocation()
             
         }else{
             //locationManager.requestWhenInUseAuthorization()

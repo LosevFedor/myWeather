@@ -14,14 +14,6 @@ let context = CoreDataStack().persistentContainer.viewContext
 
 class CoreDataStack{
     
-    
-    /*lazy var fethcResultController:NSFetchedResultsController<SettingsTable> = {
-        let request: NSFetchRequest<SettingsTable> = SettingsTable.fetchRequest()
-        let controller = NSFetchedResultsController(fetchRequest: request, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        return controller
-    }()*/
-    
-    
     func save(){
         if context.hasChanges{
             do{

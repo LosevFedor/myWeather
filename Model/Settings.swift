@@ -7,13 +7,19 @@
 //
 
 import Foundation
+import UIKit
+import CoreData
 
 class Settings {
     
     private var _сelsius: Double!
     private var _fahrenheit: Double!
     
-    private var _specifiedTemperature: String!
+    private var _selectTemp: Int!
+    
+    private var _typeTemperature:String!
+
+    let coreDataStack = CoreDataStack()
     
     var сelsius:Double{
         get{
@@ -32,49 +38,54 @@ class Settings {
         }
     }
     
-    private func setFarinhaitDegree ( _ currenKelvinTemp:Double) -> Double{
-        let getTemperature = (currenKelvinTemp * (9/5) - 459.67)
-         _fahrenheit = Double(round(10 * getTemperature/10))
-        return fahrenheit
-    }
     
-    private func setCelsiumDegree( _ currenKelvinTemp:Double) -> Double{
-        let getTemperature = (currenKelvinTemp - 273.15)
-        _сelsius = Double(round(10 * getTemperature/10))
-        return сelsius
-    }
-    
-    // MARK: Property get temperature from CoreData.
-    /*var specifiedTemperature: String {
+    var typeTemperature: String {
         get{
-             _specifiedTemperature = temperatureData()
-            return _specifiedTemperature
+            return _typeTemperature
+        }set{
+            _typeTemperature = newValue
         }
-    }*/
+    }
+    var selectTemp:Int{
+        get{
+            return _selectTemp
+        }set{
+            _selectTemp = newValue
+        }
+    }
 
-    // MARK: Return converted temperature.
-    /*func convertDegrees(currenKelvinTemp:Double) -> Double{
+    init() {
+        loadData()
         
-        var typeOfDegrees = 0.0
+    }
+    
+    //static var internalSequances = Settings()
+  
+    
+    func loadData(){
         
-        switch (specifiedTemperature) {
-        case "celsius":
-            typeOfDegrees = setCelsiumDegree(currenKelvinTemp)
-        case "farinhate":
-            typeOfDegrees = setFarinhaitDegree (currenKelvinTemp)
-        default:
-            print("error")
+        let request: NSFetchRequest<SettingsTable> = SettingsTable.fetchRequest()
+        do{
+            settingsTable = try context.fetch(request)
+            for data in settingsTable {
+                _selectTemp = data.value(forKey: keySelectTemp) as? Int
+                _typeTemperature = (data.value(forKey: keyTemperature) as? String)!
+            }
+            //print("\(selectTemp) \(typeTemperature)")
+        }catch{
+            print("Error fetch SettingsParameters objects \(error.localizedDescription)")
         }
-        
-        return typeOfDegrees
-    }*/
+    }
     
-    
-    // MARK: Get type of temperature from CoreData.
-    //private func temperatureData() -> String{
+    func saveChangesToData(){
+        let entiti = NSEntityDescription.entity(forEntityName: "SettingsTable", in: context)
         
+        let changeParameter = NSManagedObject(entity: entiti!, insertInto: context)
+        changeParameter.setValue(typeTemperature, forKey: keyTemperature)
+        changeParameter.setValue(selectTemp, forKey: keySelectTemp)
+        coreDataStack.save()
         
-    //}
+    }
     
     
 }
