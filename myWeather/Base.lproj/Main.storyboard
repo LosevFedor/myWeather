@@ -271,11 +271,6 @@
                                             <segue destination="lqm-eD-JTO" kind="presentation" id="nZw-BF-zpe"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIg-ki-gVu">
-                                        <rect key="frame" x="100" y="579" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.24705882352941178" green="0.83137254901960778" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -479,23 +474,22 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LIW-Qk-kWu">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="wtp-XY-f2c">
-                                        <rect key="frame" x="20" y="35" width="335" height="226"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="wtp-XY-f2c">
+                                        <rect key="frame" x="20" y="50" width="335" height="281"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Z1W-Ln-pbE">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="58"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EY4-9E-toB">
-                                                        <rect key="frame" x="0.0" y="0.0" width="87.5" height="24"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EY4-9E-toB">
+                                                        <rect key="frame" x="0.0" y="0.0" width="91.5" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="g0p-Yx-eJS">
-                                                        <rect key="frame" x="0.0" y="28" width="160" height="31"/>
+                                                        <rect key="frame" x="0.0" y="22" width="160" height="29"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="160" id="4mC-di-H3M"/>
-                                                            <constraint firstAttribute="height" constant="30" id="dYy-qr-zdd"/>
                                                         </constraints>
                                                         <segments>
                                                             <segment title="˚C"/>
@@ -508,25 +502,22 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="1Pt-Ee-anN">
-                                                <rect key="frame" x="0.0" y="64" width="335" height="48"/>
+                                                <rect key="frame" x="0.0" y="59" width="335" height="48"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Presure" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z54-1D-pai">
-                                                        <rect key="frame" x="0.0" y="0.0" width="53" height="18"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Presure:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z54-1D-pai">
+                                                        <rect key="frame" x="0.0" y="0.0" width="57" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xhm-7x-yhZ">
-                                                        <rect key="frame" x="0.0" y="18" width="320" height="31"/>
+                                                        <rect key="frame" x="0.0" y="18" width="160" height="31"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="320" id="DkZ-jJ-cEc"/>
-                                                            <constraint firstAttribute="height" constant="30" id="Exy-EX-O4F"/>
+                                                            <constraint firstAttribute="width" constant="160" id="DkZ-jJ-cEc"/>
                                                         </constraints>
                                                         <segments>
-                                                            <segment title="mph"/>
-                                                            <segment title="km/h"/>
-                                                            <segment title="m/s"/>
-                                                            <segment title="Knots"/>
+                                                            <segment title="hPa"/>
+                                                            <segment title="mm Hg"/>
                                                         </segments>
                                                     </segmentedControl>
                                                 </subviews>
@@ -534,8 +525,33 @@
                                                     <constraint firstAttribute="height" constant="48" id="kig-bY-7p1"/>
                                                 </constraints>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="EMj-pc-lFi">
+                                                <rect key="frame" x="0.0" y="116" width="240" height="48"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wind speed:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oA5-1V-Rde">
+                                                        <rect key="frame" x="0.0" y="0.0" width="86" height="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="B3d-kl-6vb">
+                                                        <rect key="frame" x="0.0" y="18" width="240" height="31"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="240" id="KH9-Ag-Hrx"/>
+                                                        </constraints>
+                                                        <segments>
+                                                            <segment title="knots"/>
+                                                            <segment title="Km/h"/>
+                                                            <segment title="M/s"/>
+                                                        </segments>
+                                                    </segmentedControl>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="ovO-LZ-a8v"/>
+                                                </constraints>
+                                            </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="OFX-b9-nut">
-                                                <rect key="frame" x="0.0" y="118" width="335" height="108"/>
+                                                <rect key="frame" x="0.0" y="173" width="335" height="108"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fitback" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYA-IN-94w">
                                                         <rect key="frame" x="0.0" y="0.0" width="50.5" height="18"/>
@@ -571,7 +587,6 @@
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="226" id="8cG-44-IJD"/>
                                             <constraint firstItem="Z1W-Ln-pbE" firstAttribute="leading" secondItem="wtp-XY-f2c" secondAttribute="leading" id="A73-Ii-2AB"/>
                                             <constraint firstItem="1Pt-Ee-anN" firstAttribute="leading" secondItem="wtp-XY-f2c" secondAttribute="leading" id="PaL-LL-Jhb"/>
                                             <constraint firstAttribute="trailing" secondItem="1Pt-Ee-anN" secondAttribute="trailing" id="Wul-Yc-MUh"/>
@@ -582,7 +597,7 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBr-xx-K11">
-                                        <rect key="frame" x="314" y="16" width="45" height="34"/>
+                                        <rect key="frame" x="308" y="22" width="45" height="34"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <state key="normal" title="Done">
                                             <color key="titleColor" red="1" green="1" blue="0.93853646516799927" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -594,11 +609,11 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.24705882352941178" green="0.83137254901960778" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="GBr-xx-K11" firstAttribute="top" secondItem="LIW-Qk-kWu" secondAttribute="top" constant="16" id="Hgq-Ie-6ft"/>
+                                    <constraint firstItem="GBr-xx-K11" firstAttribute="top" secondItem="LIW-Qk-kWu" secondAttribute="top" constant="22" id="Hgq-Ie-6ft"/>
                                     <constraint firstAttribute="trailing" secondItem="wtp-XY-f2c" secondAttribute="trailing" constant="20" id="REY-e3-c0y"/>
                                     <constraint firstItem="wtp-XY-f2c" firstAttribute="leading" secondItem="LIW-Qk-kWu" secondAttribute="leading" constant="20" id="TKE-DG-fWL"/>
-                                    <constraint firstItem="wtp-XY-f2c" firstAttribute="top" secondItem="LIW-Qk-kWu" secondAttribute="top" constant="35" id="TUw-kf-fd3"/>
-                                    <constraint firstAttribute="trailing" secondItem="GBr-xx-K11" secondAttribute="trailing" constant="16" id="dy9-AU-8oq"/>
+                                    <constraint firstItem="wtp-XY-f2c" firstAttribute="top" secondItem="LIW-Qk-kWu" secondAttribute="top" constant="50" id="TUw-kf-fd3"/>
+                                    <constraint firstAttribute="trailing" secondItem="GBr-xx-K11" secondAttribute="trailing" constant="22" id="dy9-AU-8oq"/>
                                     <constraint firstItem="wtp-XY-f2c" firstAttribute="centerX" secondItem="LIW-Qk-kWu" secondAttribute="centerX" id="ya7-ds-Cif"/>
                                 </constraints>
                             </view>

@@ -60,7 +60,7 @@ class Settings {
         do{
             settingsTable = try context.fetch(request)
             for data in settingsTable {
-                _selectTemp = data.value(forKey: keySelectTemp) as? Int
+                _selectTemp = data.value(forKey: keySelectTemperature) as? Int
                 globalValueTypeTemperature = (data.value(forKey: keyTemperature) as? String)!
 
             }
@@ -75,7 +75,7 @@ class Settings {
         
         let changeParameter = NSManagedObject(entity: entiti!, insertInto: context)
         changeParameter.setValue(globalValueTypeTemperature, forKey: keyTemperature)
-        changeParameter.setValue(selectTemp, forKey: keySelectTemp)
+        changeParameter.setValue(selectTemp, forKey: keySelectTemperature)
         coreDataStack.save()
         
     }
