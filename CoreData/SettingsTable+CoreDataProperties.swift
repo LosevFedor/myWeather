@@ -2,7 +2,7 @@
 //  SettingsTable+CoreDataProperties.swift
 //  myWeather
 //
-//  Created by admin on 26/03/2019.
+//  Created by admin on 28/03/2019.
 //  Copyright © 2019 admin. All rights reserved.
 //
 //
@@ -19,5 +19,9 @@ extension SettingsTable {
 
     @NSManaged public var selectTemp: Int16
     @NSManaged public var temperature: String?
+    @NSManaged public var selectPress: Int16
+    @NSManaged public var pressure: String?
+    @NSManaged public var windSpeed: String?
+    @NSManaged public var selectWindSpeed: Int16
 
 }
