@@ -10,7 +10,13 @@ import UIKit
 import CoreData
 
 let keyTemperature = "temperature"
-let keySelectTemp = "selectTemp"
+let keySelectTemperature = "selectTemp"
+
+let keyPressure = "pressure"
+let keySelectPressure = "selectPress"
+
+let keyWindSpeed = "windSpeed"
+let keySelectWindSpeed = "selectWindSpeed"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,8 +25,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     private let coreDataStack = CoreDataStack()
+    
     private let defaultTemperature = "сelsius"
-    private let defaultSelectTemp = 0
+    private let defaultSelectTemperature = 0
+    
+    private let defaultPressure = "hPa"
+    private let defaultSelectPressure = 0
+    
+    private let defaultWindSpeed = "knots"
+    private let defaultSelectWindSpeed = 0
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
@@ -37,29 +50,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return launchedBefore
     }
 
-    func applicationWillResignActive(_ application: UIApplication) {
-    }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-    }
-    
     private func saveDefaultSettings(){
         let entiti = NSEntityDescription.entity(forEntityName: "SettingsTable", in: context)
         
         let changeParameter = NSManagedObject(entity: entiti!, insertInto: context)
+        
         changeParameter.setValue(defaultTemperature, forKey: keyTemperature)
-        changeParameter.setValue(defaultSelectTemp, forKey: keySelectTemp)
+        changeParameter.setValue(defaultSelectTemperature, forKey: keySelectTemperature)
+        
+        changeParameter.setValue(defaultPressure, forKey: keyPressure)
+        changeParameter.setValue(defaultSelectPressure, forKey: keySelectPressure)
+        
+        changeParameter.setValue(defaultWindSpeed, forKey: keyWindSpeed)
+        changeParameter.setValue(defaultSelectWindSpeed, forKey: keySelectWindSpeed)
+        
         coreDataStack.save()
         
     }
+    
+    func applicationWillResignActive(_ application: UIApplication) {
+    }
+
+    func applicationDidEnterBackground(_ application: UIApplication) {}
+
+    func applicationWillEnterForeground(_ application: UIApplication) {}
+
+    func applicationDidBecomeActive(_ application: UIApplication) {}
+
+    func applicationWillTerminate(_ application: UIApplication) {}
+    
 }
 
