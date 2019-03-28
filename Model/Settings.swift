@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import CoreData
 
+var globalValueTypeTemperature: String!
+
 class Settings {
     
     private var _сelsius: Double!
@@ -17,8 +19,6 @@ class Settings {
     
     private var _selectTemp: Int!
     
-    private var _typeTemperature:String!
-
     let coreDataStack = CoreDataStack()
     
     var сelsius:Double{
@@ -38,14 +38,6 @@ class Settings {
         }
     }
     
-    
-    var typeTemperature: String {
-        get{
-            return _typeTemperature
-        }set{
-            _typeTemperature = newValue
-        }
-    }
     var selectTemp:Int{
         get{
             return _selectTemp
@@ -69,7 +61,8 @@ class Settings {
             settingsTable = try context.fetch(request)
             for data in settingsTable {
                 _selectTemp = data.value(forKey: keySelectTemp) as? Int
-                _typeTemperature = (data.value(forKey: keyTemperature) as? String)!
+                globalValueTypeTemperature = (data.value(forKey: keyTemperature) as? String)!
+
             }
             //print("\(selectTemp) \(typeTemperature)")
         }catch{
@@ -81,7 +74,7 @@ class Settings {
         let entiti = NSEntityDescription.entity(forEntityName: "SettingsTable", in: context)
         
         let changeParameter = NSManagedObject(entity: entiti!, insertInto: context)
-        changeParameter.setValue(typeTemperature, forKey: keyTemperature)
+        changeParameter.setValue(globalValueTypeTemperature, forKey: keyTemperature)
         changeParameter.setValue(selectTemp, forKey: keySelectTemp)
         coreDataStack.save()
         

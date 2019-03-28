@@ -12,6 +12,7 @@ import CoreData
 class SettingsVC: UIViewController {
 
     let settings = Settings()
+    let currentWeather = CurrentWeather()
     
     private let coreDataStack = CoreDataStack()
     @IBOutlet var numberOfSegment: UISegmentedControl!
@@ -21,8 +22,6 @@ class SettingsVC: UIViewController {
         
         settings.loadData()
         numberOfSegment.selectedSegmentIndex = settings.selectTemp
-        
-        // Do any additional setup after loading the view.
     }
    
     @IBAction func setUpTemperature(_ sender: UISegmentedControl) {
@@ -30,11 +29,11 @@ class SettingsVC: UIViewController {
         switch (numberOfSegment.selectedSegmentIndex) {
         case 0:
             //numberOfSegment = sender.selectedSegmentIndex
-            settings.typeTemperature = "сelsius"
+            globalValueTypeTemperature = "сelsius"
             settings.selectTemp = 0
             //sender.
         case 1:
-            settings.typeTemperature = "fahrenheit"
+            globalValueTypeTemperature = "fahrenheit"
             settings.selectTemp = 1
         default:
             print("error temperature type")

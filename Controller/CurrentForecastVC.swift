@@ -47,7 +47,6 @@ class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        //locationAuthStatus()
         
     }
     func locationAuthStatus(){
@@ -63,7 +62,7 @@ class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
             currentWeather.downloadWeatherDetails {
                 self.currentWeatherToday()
             }
-            locationManager.stopUpdatingLocation()
+            //locationManager.stopUpdatingLocation()
             
         }else{
             //locationManager.requestWhenInUseAuthorization()

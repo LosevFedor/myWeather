@@ -139,7 +139,7 @@ class CurrentWeather{
                 if let main = dict["main"] as? Dictionary<String, Any>{
                     if let currenTemp = main["temp"] as? Double {
                         
-                        if self.settings.typeTemperature == "fahrenheit"{
+                        if globalValueTypeTemperature == "fahrenheit"{
                             self._currentTemperature = setFarinhaitDegree(currenTemp)
                         }
                         else{
@@ -148,7 +148,7 @@ class CurrentWeather{
                     }
                     
                     if let minTemp = main["temp_min"] as? Double{
-                        if self.settings.typeTemperature == "fahrenheit"{
+                        if globalValueTypeTemperature == "fahrenheit"{
                             self._minWeatherTemperature = setFarinhaitDegree(minTemp)
                         }else{
                             self._minWeatherTemperature = setCelsiumDegree(minTemp)
@@ -157,7 +157,7 @@ class CurrentWeather{
                     }
                     
                     if let maxTemp = main["temp_max"] as? Double{
-                        if self.settings.typeTemperature == "fahrenheit"{
+                        if globalValueTypeTemperature == "fahrenheit"{
                             self._maxWeatherTemperature = setFarinhaitDegree(maxTemp)
                         }else{
                             self._maxWeatherTemperature = setCelsiumDegree(maxTemp)
@@ -197,3 +197,5 @@ func setCelsiumDegree( _ currenKelvinTemp:Double) -> Double{
     let _сelsius = Double(round(10 * getTemperature/10))
     return _сelsius
 }
+
+
