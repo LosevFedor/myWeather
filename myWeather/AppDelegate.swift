@@ -9,21 +9,20 @@
 import UIKit
 import CoreData
 
-let keyTemperature = "temperature"
-let keySelectTemperature = "selectTemp"
-
-let keyPressure = "pressure"
-let keySelectPressure = "selectPress"
-
-let keyWindSpeed = "windSpeed"
-let keySelectWindSpeed = "selectWindSpeed"
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    private let keyTemperature = "temperature"
+    private let keySelectTemperature = "selectTemp"
+    
+    private let keyPressure = "pressure"
+    private let keySelectPressure = "selectPress"
+    
+    private let keyWindSpeed = "windSpeed"
+    private let keySelectWindSpeed = "selectWindSpeed"
+    
     private let coreDataStack = CoreDataStack()
     
     private let defaultTemperature = "сelsius"
