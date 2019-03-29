@@ -15,20 +15,25 @@ class SettingsVC: UIViewController {
     let currentWeather = CurrentWeather()
     
     private let coreDataStack = CoreDataStack()
-    @IBOutlet var numberOfSegment: UISegmentedControl!
+    
+    @IBOutlet var numberSegmentTemperature: UISegmentedControl!
+    @IBOutlet var numberSegmentPressure: UISegmentedControl!
+    @IBOutlet var numberSegmentWindSpeed: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         settings.loadData()
-        numberOfSegment.selectedSegmentIndex = settings.selectTemp
+        
+        numberSegmentTemperature.selectedSegmentIndex = settings.selectTemp
+        numberSegmentPressure.selectedSegmentIndex = settings.selectPressure
+        numberSegmentWindSpeed.selectedSegmentIndex = settings.selectWindSpeed
     }
    
     @IBAction func setUpTemperature(_ sender: UISegmentedControl) {
-        numberOfSegment.selectedSegmentIndex = sender.selectedSegmentIndex
-        switch (numberOfSegment.selectedSegmentIndex) {
+        numberSegmentTemperature.selectedSegmentIndex = sender.selectedSegmentIndex
+        switch (numberSegmentTemperature.selectedSegmentIndex) {
         case 0:
-            //numberOfSegment = sender.selectedSegmentIndex
             globalValueTypeTemperature = "сelsius"
             settings.selectTemp = 0
             //sender.
@@ -38,7 +43,37 @@ class SettingsVC: UIViewController {
         default:
             print("error temperature type")
         }
-        //print("UISegmentedControl \(e)")
+    }
+    
+    @IBAction func setUpPressure(_ sender: UISegmentedControl) {
+        numberSegmentPressure.selectedSegmentIndex = sender.selectedSegmentIndex
+        switch (numberSegmentPressure.selectedSegmentIndex) {
+        case 0:
+            globalValueTypePressure = "hPa"
+            settings.selectPressure = 0
+        case 1:
+            globalValueTypePressure = "mmHd"
+            settings.selectPressure = 1
+        default:
+            print("error pressure type")
+        }
+    }
+    
+    @IBAction func setUpWindSpeed(_ sender: UISegmentedControl) {
+        numberSegmentWindSpeed.selectedSegmentIndex = sender.selectedSegmentIndex
+        switch (numberSegmentWindSpeed.selectedSegmentIndex) {
+        case 0:
+            globalValueTypeWindSpeed = "knots"
+            settings.selectWindSpeed = 0
+        case 1:
+            globalValueTypeWindSpeed = "kmh"
+            settings.selectWindSpeed = 1
+        case 2:
+            globalValueTypeWindSpeed = "ms"
+            settings.selectWindSpeed = 2
+        default:
+            print("error wind speed type")
+        }
     }
     
     @IBAction func saveChanges(_ sender: Any) {
