@@ -22,6 +22,12 @@ class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var humidity: UILabel!
     @IBOutlet var pressure: UILabel!
     
+    @IBOutlet var visualTypeTemperatureCurrent: UILabel!
+    @IBOutlet var visualTypeTemperatureMin: UILabel!
+    @IBOutlet var visualTypeTemperatureMax: UILabel!
+    
+    @IBOutlet var visualTypeSpeed: UILabel!
+    @IBOutlet var visualTypePressure: UILabel!
     
     
     var currentWeather: CurrentWeather!
@@ -89,6 +95,13 @@ class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
         windSpeed.text = "\(currentWeather.speed)"
         humidity.text = "\(currentWeather.humidity)"
         pressure.text = "\(currentWeather.pressure)"
+        
+        visualTypeTemperatureCurrent.text = globalValueTypeTemperature
+        visualTypeTemperatureMin.text = globalValueTypeTemperature
+        visualTypeTemperatureMax.text = globalValueTypeTemperature
+        
+        visualTypeSpeed.text = globalValueTypeWindSpeed
+        visualTypePressure.text = globalValueTypePressure
         
     }
     

@@ -25,13 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private let coreDataStack = CoreDataStack()
     
-    private let defaultTemperature = "сelsius"
+    private let defaultTemperature = "˚c"
     private let defaultSelectTemperature = 0
     
     private let defaultPressure = "hPa"
     private let defaultSelectPressure = 0
     
-    private let defaultWindSpeed = "knots"
+    private let defaultWindSpeed = "Knots"
     private let defaultSelectWindSpeed = 0
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

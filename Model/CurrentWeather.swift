@@ -139,7 +139,7 @@ class CurrentWeather{
                 if let main = dict["main"] as? Dictionary<String, Any>{
                     if let currenTemp = main["temp"] as? Double {
                         
-                        if globalValueTypeTemperature == "fahrenheit"{
+                        if globalValueTypeTemperature == "˚f"{
                             self._currentTemperature = setFarinhaitDegree(currenTemp)
                         }
                         else{
@@ -148,7 +148,7 @@ class CurrentWeather{
                     }
                     
                     if let minTemp = main["temp_min"] as? Double{
-                        if globalValueTypeTemperature == "fahrenheit"{
+                        if globalValueTypeTemperature == "˚f"{
                             self._minWeatherTemperature = setFarinhaitDegree(minTemp)
                         }else{
                             self._minWeatherTemperature = setCelsiumDegree(minTemp)
@@ -157,7 +157,7 @@ class CurrentWeather{
                     }
                     
                     if let maxTemp = main["temp_max"] as? Double{
-                        if globalValueTypeTemperature == "fahrenheit"{
+                        if globalValueTypeTemperature == "˚f"{
                             self._maxWeatherTemperature = setFarinhaitDegree(maxTemp)
                         }else{
                             self._maxWeatherTemperature = setCelsiumDegree(maxTemp)
@@ -184,9 +184,9 @@ class CurrentWeather{
                 if let wind = dict["wind"] as? Dictionary<String,Any>{
                     if let speed = wind["speed"] as? Double{
                         
-                        if globalValueTypeWindSpeed == "knots"{
+                        if globalValueTypeWindSpeed == "Knots"{
                             self._speed = setKnotsWindSpeed(speed)
-                        } else if globalValueTypeWindSpeed == "kmh" {
+                        } else if globalValueTypeWindSpeed == "Km/h" {
                             self._speed = setkmhWindSpeed(speed)
                         }else{
                             self._speed = setMsWindSpeed(speed)

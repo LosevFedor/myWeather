@@ -34,11 +34,11 @@ class SettingsVC: UIViewController {
         numberSegmentTemperature.selectedSegmentIndex = sender.selectedSegmentIndex
         switch (numberSegmentTemperature.selectedSegmentIndex) {
         case 0:
-            globalValueTypeTemperature = "сelsius"
+            globalValueTypeTemperature = "˚c"
             settings.selectTemp = 0
             //sender.
         case 1:
-            globalValueTypeTemperature = "fahrenheit"
+            globalValueTypeTemperature = "˚f"
             settings.selectTemp = 1
         default:
             print("error temperature type")
@@ -52,7 +52,7 @@ class SettingsVC: UIViewController {
             globalValueTypePressure = "hPa"
             settings.selectPressure = 0
         case 1:
-            globalValueTypePressure = "mmHd"
+            globalValueTypePressure = "mm Hg"
             settings.selectPressure = 1
         default:
             print("error pressure type")
@@ -63,13 +63,13 @@ class SettingsVC: UIViewController {
         numberSegmentWindSpeed.selectedSegmentIndex = sender.selectedSegmentIndex
         switch (numberSegmentWindSpeed.selectedSegmentIndex) {
         case 0:
-            globalValueTypeWindSpeed = "knots"
+            globalValueTypeWindSpeed = "Knots"
             settings.selectWindSpeed = 0
         case 1:
-            globalValueTypeWindSpeed = "kmh"
+            globalValueTypeWindSpeed = "Km/h"
             settings.selectWindSpeed = 1
         case 2:
-            globalValueTypeWindSpeed = "ms"
+            globalValueTypeWindSpeed = "M/s"
             settings.selectWindSpeed = 2
         default:
             print("error wind speed type")
