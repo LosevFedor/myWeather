@@ -24,7 +24,7 @@ class CurrentWeather{
     
     private var _pressure: Int!
     private var _humidity: Int!
-    private var _speed: Int!
+    private var _speed: Double!
 
     private let settings = Settings()
     
@@ -90,9 +90,9 @@ class CurrentWeather{
         return _maxWeatherTemperature
     }
     
-    var speed: Int{
+    var speed: Double{
         if _speed == nil{
-            _speed = 0
+            _speed = 0.0
         }
         return _speed
     }
@@ -165,7 +165,14 @@ class CurrentWeather{
                     }
                     
                     if let pressure = main["pressure"] as? Int{
-                        self._pressure = pressure
+                        
+                        if globalValueTypePressure == "hPa"{
+                            self._pressure = setHpaPressure(pressure)
+                        }else{
+                            self._pressure = setMmHgPressure(pressure)
+                        }
+                        
+                        
                     }
                     
                     if let humidity = main["humidity"] as? Int{
@@ -176,7 +183,14 @@ class CurrentWeather{
                 // MARK: Get wind.
                 if let wind = dict["wind"] as? Dictionary<String,Any>{
                     if let speed = wind["speed"] as? Double{
-                        self._speed = Int(speed)
+                        
+                        if globalValueTypeWindSpeed == "knots"{
+                            self._speed = setKnotsWindSpeed(speed)
+                        } else if globalValueTypeWindSpeed == "kmh" {
+                            self._speed = setkmhWindSpeed(speed)
+                        }else{
+                            self._speed = setMsWindSpeed(speed)
+                        }
                     }
                 }
             }
@@ -198,4 +212,32 @@ func setCelsiumDegree( _ currenKelvinTemp:Double) -> Double{
     return _сelsius
 }
 
+func setHpaPressure(_ currentPressure: Int) -> Int{
+    let hpa = currentPressure
+    return hpa
+}
+
+func setMmHgPressure(_ currentPressure: Int) -> Int{
+        let mmHg = (Double(currentPressure)/1.333)
+    return Int(mmHg)
+}
+
+func setKnotsWindSpeed(_ currentSpeed: Double) -> Double{
+
+    let knots = currentSpeed
+    let shortKnots = NSString(format: "%.2f", knots).doubleValue
+    return shortKnots
+}
+
+func setkmhWindSpeed(_ currentSpeed: Double) -> Double{
+    let kmh = currentSpeed * 1.852
+    let shortKmh = NSString(format: "%.1f", kmh).doubleValue
+    return shortKmh
+}
+
+func setMsWindSpeed(_ currentSpeed: Double) -> Double{
+    let ms = currentSpeed/1.944
+    let shortMs = NSString(format: "%.1f", ms).doubleValue
+    return shortMs
+}
 
