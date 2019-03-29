@@ -225,19 +225,28 @@ func setMmHgPressure(_ currentPressure: Int) -> Int{
 func setKnotsWindSpeed(_ currentSpeed: Double) -> Double{
 
     let knots = currentSpeed
-    let shortKnots = NSString(format: "%.2f", knots).doubleValue
+    let format: NSString = "%.2f"
+    let shortKnots = numberFormatter(format, knots)
     return shortKnots
 }
 
 func setkmhWindSpeed(_ currentSpeed: Double) -> Double{
     let kmh = currentSpeed * 1.852
-    let shortKmh = NSString(format: "%.1f", kmh).doubleValue
+    let shortKmh = numberFormatter(kmh)
     return shortKmh
 }
 
 func setMsWindSpeed(_ currentSpeed: Double) -> Double{
     let ms = currentSpeed/1.944
-    let shortMs = NSString(format: "%.1f", ms).doubleValue
+    let shortMs = numberFormatter(ms)
     return shortMs
 }
 
+private func numberFormatter(_ value:Double)->Double{
+    let formatter = NSString(format: "%.1f", value).doubleValue
+    return formatter
+}
+private func numberFormatter(_ tupeformat: NSString, _ value:Double)->Double{
+    let formatter = NSString(format: tupeformat, value).doubleValue
+    return formatter
+}
