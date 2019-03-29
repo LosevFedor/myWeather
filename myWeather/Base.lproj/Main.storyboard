@@ -519,6 +519,9 @@
                                                             <segment title="hPa"/>
                                                             <segment title="mm Hg"/>
                                                         </segments>
+                                                        <connections>
+                                                            <action selector="setUpPressure:" destination="lqm-eD-JTO" eventType="valueChanged" id="GTn-Ct-0Pi"/>
+                                                        </connections>
                                                     </segmentedControl>
                                                 </subviews>
                                                 <constraints>
@@ -544,6 +547,9 @@
                                                             <segment title="Km/h"/>
                                                             <segment title="M/s"/>
                                                         </segments>
+                                                        <connections>
+                                                            <action selector="setUpWindSpeed:" destination="lqm-eD-JTO" eventType="valueChanged" id="aRE-VP-jFg"/>
+                                                        </connections>
                                                     </segmentedControl>
                                                 </subviews>
                                                 <constraints>
@@ -628,7 +634,9 @@
                         <viewLayoutGuide key="safeArea" id="HNW-aH-0oo"/>
                     </view>
                     <connections>
-                        <outlet property="numberOfSegment" destination="g0p-Yx-eJS" id="XdB-0U-WKe"/>
+                        <outlet property="numberSegmentPressure" destination="xhm-7x-yhZ" id="BCI-Ng-DyE"/>
+                        <outlet property="numberSegmentTemperature" destination="g0p-Yx-eJS" id="XdB-0U-WKe"/>
+                        <outlet property="numberSegmentWindSpeed" destination="B3d-kl-6vb" id="n2g-9b-nQA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="giZ-5I-SqV" userLabel="First Responder" sceneMemberID="firstResponder"/>
