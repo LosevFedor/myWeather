@@ -47,6 +47,8 @@ class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
         locationManager.startMonitoringSignificantLocationChanges()
         locationManager.startUpdatingLocation()
         
+         snow()
+        
     }
    
     
@@ -103,6 +105,13 @@ class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
         visualTypeSpeed.text = globalValueTypeWindSpeed
         visualTypePressure.text = globalValueTypePressure
         
+    }
+    
+    func snow(){
+        let emitter = Emitter.get(with: #imageLiteral(resourceName: "Snow"))
+        emitter.emitterPosition = CGPoint(x: view.frame.width/2, y: 0)
+        emitter.emitterSize = CGSize(width: view.frame.width, height: 2)
+        view.layer.addSublayer(emitter)
     }
     
 }
