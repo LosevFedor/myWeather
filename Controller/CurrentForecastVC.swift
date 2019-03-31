@@ -47,8 +47,6 @@ class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
         locationManager.startMonitoringSignificantLocationChanges()
         locationManager.startUpdatingLocation()
         
-         snow()
-        
     }
    
     
@@ -91,6 +89,9 @@ class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
         sityTemperature.text = "\(currentWeather.currentTemperature)"
         imageWeather.image = UIImage(named: currentWeather.imageWeather)
         descriptionWeather.text = currentWeather.weatherType
+        
+        precipitation(currentWeather.weatherType)
+        
         maxTemperature.text = "\(currentWeather.maxWeatherTemperature)"
         minTemperature.text = "\(currentWeather.minWeatherTemperature)"
         date.text = currentWeather.date
@@ -107,12 +108,31 @@ class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
         
     }
     
-    func snow(){
-        let emitter = Emitter.get(with: #imageLiteral(resourceName: "Snow"))
+    func precipitation(_ type: String){
+        switch type {
+        case "Snow":
+            setSnow(with: type)
+        case "Rain":
+            setRain(with: type)
+        default:
+            print("not snow and not rain")
+            return
+        }
+    }
+    
+    func setSnow(with type: String){
+        emitterParams(type)
+    }
+    
+    func setRain(with type: String){
+        emitterParams(type)
+    }
+    
+    func emitterParams(_ type: String){
+        let emitter = Emitter.get(with: type)
         emitter.emitterPosition = CGPoint(x: view.frame.width/2, y: 0)
         emitter.emitterSize = CGSize(width: view.frame.width, height: 2)
         view.layer.addSublayer(emitter)
     }
-    
 }
 

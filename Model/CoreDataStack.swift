@@ -37,13 +37,6 @@ class CoreDataStack{
         }
     }
     
-    
-    
-    
-    
-    
-    
-    
     // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentContainer = {
         
