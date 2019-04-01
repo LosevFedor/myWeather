@@ -47,6 +47,9 @@ class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
         locationManager.startMonitoringSignificantLocationChanges()
         locationManager.startUpdatingLocation()
         
+        //precipitation("Snow")
+
+        
     }
    
     
