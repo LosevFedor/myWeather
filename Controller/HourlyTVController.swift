@@ -18,6 +18,8 @@ class HourlyTVController: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        print(CURRENT_HOURLY_WEATHER_URL)
+        
     }
 
     // MARK: - Table view data source

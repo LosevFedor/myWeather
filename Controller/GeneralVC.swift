@@ -27,17 +27,14 @@ class GeneralVC: UIViewController {
             now.alpha = 1
             hourly.alpha = 0
             days.alpha = 0
-            print("0")
         case 1:
             now.alpha = 0
             hourly.alpha = 1
             days.alpha = 0
-            print("1")
         case 2:
             now.alpha = 0
             hourly.alpha = 0
             days.alpha = 1
-            print("2")
         default:
             print("Error change segment")
         }
