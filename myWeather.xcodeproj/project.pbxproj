@@ -11,6 +11,8 @@
 		84276C2E22523FD500A85A77 /* GeneralVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84276C2D22523FD500A85A77 /* GeneralVC.swift */; };
 		84276C302252418D00A85A77 /* HourlyTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84276C2F2252418D00A85A77 /* HourlyTVController.swift */; };
 		84276C322252424F00A85A77 /* DaysTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84276C312252424F00A85A77 /* DaysTVController.swift */; };
+		84276C34225380FA00A85A77 /* HourlyTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84276C33225380FA00A85A77 /* HourlyTVCell.swift */; };
+		84276C362253811300A85A77 /* DaysTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84276C352253811300A85A77 /* DaysTVCell.swift */; };
 		8458F05C223603AD00B1E5D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8458F05B223603AD00B1E5D1 /* Constants.swift */; };
 		8458F05E223606F600B1E5D1 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8458F05D223606F600B1E5D1 /* CurrentWeather.swift */; };
 		84C0A6D822423415004FE6B1 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0A6D722423415004FE6B1 /* Settings.swift */; };
@@ -36,6 +38,8 @@
 		84276C2D22523FD500A85A77 /* GeneralVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralVC.swift; sourceTree = "<group>"; };
 		84276C2F2252418D00A85A77 /* HourlyTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyTVController.swift; sourceTree = "<group>"; };
 		84276C312252424F00A85A77 /* DaysTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysTVController.swift; sourceTree = "<group>"; };
+		84276C33225380FA00A85A77 /* HourlyTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyTVCell.swift; sourceTree = "<group>"; };
+		84276C352253811300A85A77 /* DaysTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysTVCell.swift; sourceTree = "<group>"; };
 		8458F05B223603AD00B1E5D1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8458F05D223606F600B1E5D1 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		84C0A6D722423415004FE6B1 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -163,7 +167,9 @@
 				84D51330222FE872006CA7D9 /* ForecastTenDaysTVC.swift */,
 				84276C2D22523FD500A85A77 /* GeneralVC.swift */,
 				84276C2F2252418D00A85A77 /* HourlyTVController.swift */,
+				84276C33225380FA00A85A77 /* HourlyTVCell.swift */,
 				84276C312252424F00A85A77 /* DaysTVController.swift */,
+				84276C352253811300A85A77 /* DaysTVCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -295,6 +301,7 @@
 			files = (
 				84C0A70E2243ADA4004FE6B1 /* CoreDataStack.swift in Sources */,
 				84D5132D222FE3BF006CA7D9 /* ContainerVC.swift in Sources */,
+				84276C362253811300A85A77 /* DaysTVCell.swift in Sources */,
 				841FB00C224F5B7000C9487F /* Emitter.swift in Sources */,
 				84FDEFA3223F37BF00D0B327 /* Location.swift in Sources */,
 				84D51314222D4140006CA7D9 /* CurrentForecastVC.swift in Sources */,
@@ -306,6 +313,7 @@
 				84276C2E22523FD500A85A77 /* GeneralVC.swift in Sources */,
 				8458F05E223606F600B1E5D1 /* CurrentWeather.swift in Sources */,
 				84D51331222FE872006CA7D9 /* ForecastTenDaysTVC.swift in Sources */,
+				84276C34225380FA00A85A77 /* HourlyTVCell.swift in Sources */,
 				84C0A70822424F97004FE6B1 /* myWeather.xcdatamodeld in Sources */,
 				84276C322252424F00A85A77 /* DaysTVController.swift in Sources */,
 				84276C302252418D00A85A77 /* HourlyTVController.swift in Sources */,
