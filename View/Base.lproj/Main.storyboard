@@ -129,7 +129,7 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="hourlyId" rowHeight="100" id="jx5-ly-qi8" customClass="HourlyTVCell" customModule="myWeather" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="hourlyId" rowHeight="100" id="jx5-ly-qi8" customClass="HourlyTVCell" customModule="myWeather" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="66" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jx5-ly-qi8" id="a6F-P0-R2h">
@@ -248,7 +248,7 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="daysId" rowHeight="100" id="dKH-1d-6ks" customClass="DaysTVCell" customModule="myWeather" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="daysId" rowHeight="100" id="dKH-1d-6ks" customClass="DaysTVCell" customModule="myWeather" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="66" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dKH-1d-6ks" id="md9-qu-FTQ">
@@ -366,6 +366,15 @@
                                         <constraint firstItem="b3P-FC-LH8" firstAttribute="leading" secondItem="md9-qu-FTQ" secondAttribute="leadingMargin" constant="10" id="rYe-g3-AtV"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="day" destination="Eme-OH-8js" id="C0z-AT-8x8"/>
+                                    <outlet property="imageWeather" destination="866-zv-P7n" id="Dk6-WP-Tkz"/>
+                                    <outlet property="maxTemp" destination="K17-fH-Kyj" id="Fuv-Uq-FtT"/>
+                                    <outlet property="minTemp" destination="Gff-sb-pEu" id="LbQ-p2-3uQ"/>
+                                    <outlet property="tupeDegreeMin" destination="Mws-um-JKo" id="O90-Bn-WZ5"/>
+                                    <outlet property="typeDegreeMax" destination="RhC-1P-qeD" id="j9x-md-7qp"/>
+                                    <outlet property="typeWeather" destination="0Mg-oo-p5E" id="uYz-pZ-qkA"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
