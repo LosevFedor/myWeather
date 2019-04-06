@@ -10,16 +10,18 @@ import UIKit
 
 class HourlyTVCell: UITableViewCell {
 
-    @IBOutlet var time: UILabel!
-    @IBOutlet var hourlyImageWeather: UIImageView!
+    @IBOutlet var hourlyTimePeriod: UILabel!
+    @IBOutlet var hourlyImageForecast: UIImageView!
     @IBOutlet var hourlyTypeWeather: UILabel!
-    @IBOutlet var hourlyTemp: UILabel!
-    @IBOutlet var currentWeather: UILabel!
+    @IBOutlet var hourlyForecastTemp: UILabel!
+    @IBOutlet var hourlutWeatherDegrees: UILabel!
     
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func configureCell(hourlyForecast: HourlyForecast){
+        hourlyTimePeriod.text = hourlyForecast.hourlyTimePeriod
+        hourlyImageForecast.image = UIImage(named: hourlyForecast.hourlyImageForecast)
+        hourlyTypeWeather.text = hourlyForecast.hourlyTypeWeather
+        hourlyForecastTemp.text = "\(hourlyForecast.hourlyForecastTemp)"
+        hourlutWeatherDegrees.text = hourlyForecast.hourlyForecastDegree
     }
-
+    
 }

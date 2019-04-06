@@ -73,7 +73,7 @@ class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
             }
             
             // MARK: Stop updating location
-            //locationManager.stopUpdatingLocation()
+            locationManager.stopUpdatingLocation()
             
         }else{
             //locationManager.requestWhenInUseAuthorization()

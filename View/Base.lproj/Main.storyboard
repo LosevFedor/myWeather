@@ -199,11 +199,11 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="currentWeather" destination="441-nE-AXS" id="fBB-Ai-xTE"/>
-                                    <outlet property="hourlyImageWeather" destination="vN0-Vv-XJT" id="7Da-iP-4L8"/>
-                                    <outlet property="hourlyTemp" destination="dgX-z7-0JQ" id="jQX-3M-uZ6"/>
+                                    <outlet property="hourlutWeatherDegrees" destination="441-nE-AXS" id="fBB-Ai-xTE"/>
+                                    <outlet property="hourlyForecastTemp" destination="dgX-z7-0JQ" id="jQX-3M-uZ6"/>
+                                    <outlet property="hourlyImageForecast" destination="vN0-Vv-XJT" id="7Da-iP-4L8"/>
+                                    <outlet property="hourlyTimePeriod" destination="lvr-9h-h4u" id="Gfi-fy-Ywn"/>
                                     <outlet property="hourlyTypeWeather" destination="2DG-yT-00q" id="tUx-SB-t1Z"/>
-                                    <outlet property="time" destination="lvr-9h-h4u" id="zEQ-iV-ezl"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

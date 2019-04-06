@@ -15,15 +15,7 @@ class ContainerVC: UIViewController {
         present(home!, animated: true, completion: nil)
     }
     
-    @IBAction func ShowHourlyWeather(_ sender: Any) {
-        let hourly = self.storyboard?.instantiateViewController(withIdentifier: "hourly") as? ForecastHourlyTVC
-        present(hourly!, animated: true, completion: nil)
-    }
     
-    @IBAction func ShowWeatherAt10Days(_ sender: Any) {
-        let tenDays = self.storyboard?.instantiateViewController(withIdentifier: "tenDays") as? ForecastTenDaysTVC
-        present(tenDays!, animated: true, completion: nil)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
