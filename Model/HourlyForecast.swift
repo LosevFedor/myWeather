@@ -61,7 +61,7 @@ class HourlyForecast{
         if let dt = forecastDict["dt"] as? Double{
             let unixConverterDate = Date(timeIntervalSince1970: dt)
             let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .none
+            dateFormatter.dateStyle = .short
             dateFormatter.dateFormat = "EEEE"
             dateFormatter.dateStyle = .short
             
@@ -96,7 +96,8 @@ class HourlyForecast{
 extension Date{
     func hourlyOfDay() -> String{
         let dataFormatter = DateFormatter()
-        dataFormatter.dateFormat = "HH:00"
+        dataFormatter.dateStyle = .short
+        dataFormatter.dateFormat = "EEEE HH:00"
         return dataFormatter.string(from: self)
     }
 }
