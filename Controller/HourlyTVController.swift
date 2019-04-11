@@ -44,7 +44,7 @@ class HourlyTVController: UITableViewController, CLLocationManagerDelegate {
             Location.sharedInstance.longitude = currentLocation.coordinate.longitude
             
             //print("longitude \(currentLocation.coordinate.longitude) latitude \(currentLocation.coordinate.latitude)")
-            //print(HOURLY_WEATHER_URL)
+            print(HOURLY_WEATHER_URL)
             downloadHourlyForecastData {}
             
             // MARK: Stop updating location
@@ -58,7 +58,7 @@ class HourlyTVController: UITableViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         locationManager = manager
         
-        currentSityName.text = currentWeather.sityName
+//        currentSityName.text = currentWeather.sityName
 
         // Only called when variable have location data
         locationAuthStatus()
@@ -80,7 +80,7 @@ class HourlyTVController: UITableViewController, CLLocationManagerDelegate {
                     }
                     if let city = dict["city"] as? Dictionary<String,Any>{
                         if let name = city["name"] as? String{
-                            self.currentSityName.text = name
+//                            self.currentSityName.text = name
                         }
                     }
                 }

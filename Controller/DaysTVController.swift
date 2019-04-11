@@ -7,20 +7,91 @@
 //
 
 import UIKit
+import Alamofire
+import CoreLocation
 
-class DaysTVController: UITableViewController {
+var currentWeather = CurrentWeather()
+var dayForecasts = [DaysForecast]()
+var dayForecast:DaysForecast!
 
+
+class DaysTVController: UITableViewController, CLLocationManagerDelegate {
+    
+    @IBOutlet var currentSityName: UILabel!
+    
+    var locationManager = CLLocationManager()
+    var currentLocation: CLLocation!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
+        
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startMonitoringSignificantLocationChanges()
+        locationManager.startUpdatingLocation()
+        
     }
 
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    
+    func locationAuthStatus(){
         
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse{
+            currentLocation = locationManager.location
+            
+            Location.sharedInstance.latitude = currentLocation.coordinate.latitude
+            Location.sharedInstance.longitude = currentLocation.coordinate.longitude
+            
+            //print("longitude \(currentLocation.coordinate.longitude) latitude \(currentLocation.coordinate.latitude)")
+            //print(HOURLY_WEATHER_URL)
+            downloadHourlyForecastData {}
+            
+            // MARK: Stop updating location
+            locationManager.stopUpdatingLocation()
+            
+        }else{
+            print("non authorized DaysForecasrControll")
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        locationManager = manager
+        
+        //currentSityName.text = currentWeather.sityName
+        
+        // Only called when variable have location data
+        locationAuthStatus()
+    }
+    
+    func downloadHourlyForecastData(completed: @escaping DownloadComplete){
+        Alamofire.request(DAY_WEATHER_URL, method: .get).responseJSON{ (responce) in
+
+            let result = responce.result
+                if let dict = result.value as? Dictionary<String,Any>{
+                    if let list = dict["list"] as? [Dictionary<String, Any>]{
+                        for obj in list{
+                            dayForecast = DaysForecast(forecastDict:obj)
+                            dayForecasts.append(dayForecast)
+                            print(dayForecast)
+                        }
+                        self.tableView.reloadData()
+                    }
+                    if let city = dict["city"] as? Dictionary<String,Any>{
+                        if let name = city["name"] as? String{
+                            self.currentSityName.text = name
+                        }
+                    }
+                }
+            completed()
+        }
+    }
+
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 

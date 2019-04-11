@@ -52,4 +52,8 @@ class DaysForecast {
         _typeDegree = globalValueTypeTemperature
         return _typeDegree
     }
+    
+    init(forecastDict: Dictionary<String,Any>) {
+        //if let dict
+    }
 }
