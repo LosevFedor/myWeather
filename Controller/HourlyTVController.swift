@@ -32,7 +32,7 @@ class HourlyTVController: UITableViewController, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startMonitoringSignificantLocationChanges()
         locationManager.startUpdatingLocation()
-        
+                
     }
 
     func locationAuthStatus(){
@@ -76,18 +76,21 @@ class HourlyTVController: UITableViewController, CLLocationManagerDelegate {
                                 self.hourlyForecasts.append(self.hourlyForecast)
                                 print(self.hourlyForecast)
                         }
-                        self.tableView.reloadData()
+                        //let unique = Array(self.hourlyForecasts)
+                        
                     }
                     if let city = dict["city"] as? Dictionary<String,Any>{
                         if let name = city["name"] as? String{
-//                            self.currentSityName.text = name
+                            self.currentSityName.text = name
                         }
                     }
+                    self.tableView.reloadData()
                 }
             }
             completed()
         }
     }
+    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -110,3 +113,20 @@ class HourlyTVController: UITableViewController, CLLocationManagerDelegate {
     }
     
 }
+
+//extension Array where Element : Equatable {
+//    var unique: [Element] {
+//        var uniqueValues: [Element] = []
+//        forEach { item in
+//            if !uniqueValues.contains(item) {
+//                uniqueValues += [item]
+//            }
+//        }
+//        return uniqueValues
+//    }
+//}
+//extension Array where Element : Hashable {
+//    var unique: [Element] {
+//        return Array(Set(self))
+//    }
+//}

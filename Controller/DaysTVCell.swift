@@ -22,8 +22,8 @@ class DaysTVCell: UITableViewCell {
         day.text = daysForecast.dayOfTheWeak
         imageWeather.image = UIImage(named: daysForecast.imageWeather)
         typeWeather.text = daysForecast.typeWeather
-        minTemp.text = "\(daysForecast.minTemperature)"
-        maxTemp.text = "\(daysForecast.maxTemperature)"
+        minTemp.text = "\(daysForecast.minTemp)"
+        maxTemp.text = "\(daysForecast.maxTemp)"
         typeDegreeMax.text = daysForecast.typeDegree
         tupeDegreeMin.text = daysForecast.typeDegree
     }

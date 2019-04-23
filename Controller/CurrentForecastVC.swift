@@ -11,7 +11,7 @@ import CoreLocation
 
 class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
 
-    @IBOutlet var sity: UILabel!
+    @IBOutlet var sityName: UILabel!
     @IBOutlet var sityTemperature: UILabel!
     @IBOutlet var imageWeather: UIImageView!
     @IBOutlet var descriptionWeather: UILabel!
@@ -88,7 +88,7 @@ class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
     }
     
     func currentWeatherToday(){
-        sity.text = currentWeather.sityName
+        sityName.text = currentWeather.sityName
         sityTemperature.text = "\(currentWeather.currentTemperature)"
         imageWeather.image = UIImage(named: currentWeather.imageWeather)
         descriptionWeather.text = currentWeather.weatherType

@@ -60,13 +60,8 @@ class HourlyForecast{
     init(forecastDict: Dictionary<String,Any>) {
         if let dt = forecastDict["dt"] as? Double{
             let unixConverterDate = Date(timeIntervalSince1970: dt)
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .short
-            dateFormatter.dateFormat = "EEEE"
-            dateFormatter.dateStyle = .short
-            
-            self._hourlyTimePeriod = unixConverterDate.hourlyOfDay()
-            print("self._hourlyTimePeriod: \(self._hourlyTimePeriod!)")
+            self._hourlyTimePeriod = unixConverterDate.Hourly()
+//            print("self._hourlyTimePeriod: \(self._hourlyTimePeriod!)")
         }
         if let main = forecastDict["main"] as? Dictionary<String,Any>{
             if let temp = main["temp"] as? Double{
@@ -77,7 +72,7 @@ class HourlyForecast{
                     self._hourlyForecastTemp = setCelsiumDegree(temp)
                 }
                 
-                print("self._hourlyForecastTemp: \(self._hourlyForecastTemp!)")
+//                print("self._hourlyForecastTemp: \(self._hourlyForecastTemp!)")
 
             }
         }
@@ -86,18 +81,11 @@ class HourlyForecast{
                 _hourlyImageForecast = main
                 _hourlyTypeWeather = main
                 
-                print("self._hourlyTimePeriod: \(self._hourlyImageForecast!)")
+//                print("self._hourlyTimePeriod: \(self._hourlyImageForecast!)")
 
             }
         }
     }
     
 }
-extension Date{
-    func hourlyOfDay() -> String{
-        let dataFormatter = DateFormatter()
-        dataFormatter.dateStyle = .short
-        dataFormatter.dateFormat = "EEEE HH:00"
-        return dataFormatter.string(from: self)
-    }
-}
+

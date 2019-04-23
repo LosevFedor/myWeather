@@ -12,6 +12,7 @@ import CoreLocation
 
 var currentWeather = CurrentWeather()
 var dayForecasts = [DaysForecast]()
+var daysWeak = [DaysForecast]()
 var dayForecast:DaysForecast!
 
 
@@ -68,23 +69,94 @@ class DaysTVController: UITableViewController, CLLocationManagerDelegate {
     }
     
     func downloadHourlyForecastData(completed: @escaping DownloadComplete){
-        Alamofire.request(DAY_WEATHER_URL, method: .get).responseJSON{ (responce) in
+       print(FIVE_DAY_WEATHER_URL)
+        Alamofire.request(FIVE_DAY_WEATHER_URL, method: .get).responseJSON{ (responce) in
 
             let result = responce.result
                 if let dict = result.value as? Dictionary<String,Any>{
                     if let list = dict["list"] as? [Dictionary<String, Any>]{
                         for obj in list{
-                            dayForecast = DaysForecast(forecastDict:obj)
-                            dayForecasts.append(dayForecast)
-                            print(dayForecast)
+                            if dayForecasts.count < 40{
+                                dayForecast = DaysForecast(forecastDict:obj)
+                                dayForecasts.append(dayForecast)
+                            }
+                            
                         }
-                        self.tableView.reloadData()
+                        
+                        var daySunday = [DaysForecast]()
+                        var dayMonday = [DaysForecast]()
+                        var dayTuesday = [DaysForecast]()
+                        var dayWednesday = [DaysForecast]()
+                        var dayThursday = [DaysForecast]()
+                        var dayFriday = [DaysForecast]()
+                        var daySaturday = [DaysForecast]()
+
+                        
+                        for day in dayForecasts{
+                            switch (day.dayOfTheWeak){
+                               
+                            case "Sunday":
+                                daySunday.append(day)
+                                
+                            case "Monday":
+                                dayMonday.append(day)
+
+                            case "Tuesday":
+                                dayTuesday.append(day)
+                                
+                            case "Wednesday":
+                                dayWednesday.append(day)
+                                
+                            case "Thursday":
+                                dayThursday.append(day)
+                                
+                            case "Friday":
+                                dayFriday.append(day)
+                                
+                            case "Saturday":
+                                daySaturday.append(day)
+
+                            default:
+                                print("Can not find this day of weak")
+                            }
+
+                        }
+                        
+                        if daysWeak.count < 6 {
+                            
+                            if !daySunday.isEmpty {
+                                daysWeak.append(daySunday[0])
+                            }
+                            if !dayMonday.isEmpty {
+                                daysWeak.append(dayMonday[0])
+                            }
+                            if !dayTuesday.isEmpty {
+                                daysWeak.append(dayTuesday[0])
+                            }
+                            if !dayWednesday.isEmpty {
+                                daysWeak.append(dayWednesday[0])
+                            }
+                            if !dayThursday.isEmpty {
+                                daysWeak.append(dayThursday[0])
+                            }
+                            if !dayFriday.isEmpty {
+                                daysWeak.append(dayFriday[0])
+                            }
+                            if !daySaturday.isEmpty {
+                                daysWeak.append(daySaturday[0])
+                            }
+                        }
+
+                        //print("daysWeak \(daysWeak.count)")
+
                     }
                     if let city = dict["city"] as? Dictionary<String,Any>{
                         if let name = city["name"] as? String{
                             self.currentSityName.text = name
                         }
                     }
+                    self.tableView.reloadData()
+
                 }
             completed()
         }
@@ -97,15 +169,33 @@ class DaysTVController: UITableViewController, CLLocationManagerDelegate {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 6
+        return daysWeak.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "daysId", for: indexPath)
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "daysId", for: indexPath) as? DaysTVCell {
+            
+            var nameWeakAndIndex = [String:Int]()
+            let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
 
+            for index in 0...5 {
+                    
+                let detectDayOfWeak = calendar.date(byAdding: .day, value: index, to: NSDate() as Date, options: [])!.Days()
 
-        return cell
+                let detectDayIndex = index
+
+                nameWeakAndIndex = [detectDayOfWeak:detectDayIndex] /// ["Tuesday": 0] ["Wednesday": 1] ["Thursday": 2] ["Friday": 3] ["Saturday": 4] ["Sunday": 5]
+            }
+            daysWeak.sort(by: { (nameWeakAndIndex[$0.dayOfTheWeak] ?? 6) > (nameWeakAndIndex[$1.dayOfTheWeak] ?? 6) })
+            
+            let day = daysWeak[indexPath.row]
+            cell.configureCell(daysForecast: day)
+            return cell
+
+        }else{
+            return DaysTVCell()
+        }
     }
     
 
