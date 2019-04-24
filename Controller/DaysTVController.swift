@@ -145,6 +145,9 @@ class DaysTVController: UITableViewController, CLLocationManagerDelegate {
                             if !daySaturday.isEmpty {
                                 daysWeak.append(daySaturday[0])
                             }
+//                            if !daySunday.isEmpty {
+//                                daysWeak.append(daySunday[0])
+//                            }
                         }
 
                         //print("daysWeak \(daysWeak.count)")
@@ -175,19 +178,26 @@ class DaysTVController: UITableViewController, CLLocationManagerDelegate {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "daysId", for: indexPath) as? DaysTVCell {
-            
+
             var nameWeakAndIndex = [String:Int]()
-            let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
-
+            
+            var dateComponents = DateComponents()
+            dateComponents.setValue(1, for: .day);
+            var now = Date()
+            
             for index in 0...5 {
-                    
-                let detectDayOfWeak = calendar.date(byAdding: .day, value: index, to: NSDate() as Date, options: [])!.Days()
-
+                
+                let tomorrow = Calendar.current.date(byAdding: dateComponents, to: now)
+ 
                 let detectDayIndex = index
 
-                nameWeakAndIndex = [detectDayOfWeak:detectDayIndex] /// ["Tuesday": 0] ["Wednesday": 1] ["Thursday": 2] ["Friday": 3] ["Saturday": 4] ["Sunday": 5]
+                nameWeakAndIndex = [now.Days():detectDayIndex]
+                
+                now = tomorrow!
+                
+                daysWeak.sort(by: { (nameWeakAndIndex[$0.dayOfTheWeak] ?? 6) > (nameWeakAndIndex[$1.dayOfTheWeak] ?? 6) })
             }
-            daysWeak.sort(by: { (nameWeakAndIndex[$0.dayOfTheWeak] ?? 6) > (nameWeakAndIndex[$1.dayOfTheWeak] ?? 6) })
+            
             
             let day = daysWeak[indexPath.row]
             cell.configureCell(daysForecast: day)
