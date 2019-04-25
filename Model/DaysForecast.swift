@@ -37,16 +37,21 @@ class DaysForecast {
         return _typeWeather
     }
     var minTemp: Double{
-        if _minTemp == nil{
-            _minTemp = 0.0
+        get{
+                if _minTemp == nil{
+                _minTemp = 0.0
+            }
+            return _minTemp
         }
-        return _minTemp
+        set{ _minTemp = newValue }
     }
     var maxTemp: Double {
-        if _maxTemp == nil{
-            _maxTemp = 0.0
-        }
-        return _maxTemp
+        get{
+                if _maxTemp == nil{
+                _maxTemp = 0.0
+            }
+            return _maxTemp
+        }set{ _maxTemp = newValue }
     }
     
     var typeDegree: String{
@@ -95,4 +100,31 @@ class DaysForecast {
         }
 
     }
+    
+    func detectMinTempPerDay(_ day: [DaysForecast])->Double{
+        var arrayMinTemp = [Double]()
+        
+        for item in day{
+            let valueMinTemp = item.minTemp
+            arrayMinTemp.append(valueMinTemp)
+        }
+        return arrayMinTemp.min()!
+    }
+    
+    func detectMaxTempPerDay(_ day: [DaysForecast])->Double{
+        var arrayMaxTemp = [Double]()
+        
+        for item in day{
+            let valueMaxTemp = item.maxTemp
+            arrayMaxTemp.append(valueMaxTemp)
+        }
+        
+        return arrayMaxTemp.max()!
+    }
+    
+    
+    
+    
+    
+    
 }
