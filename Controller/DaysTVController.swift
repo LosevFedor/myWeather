@@ -69,7 +69,7 @@ class DaysTVController: UITableViewController, CLLocationManagerDelegate {
     }
     
     func downloadHourlyForecastData(completed: @escaping DownloadComplete){
-       print(FIVE_DAY_WEATHER_URL)
+        //print("FIVE_DAY_WEATHER_URL: \(FIVE_DAY_WEATHER_URL)")
         Alamofire.request(FIVE_DAY_WEATHER_URL, method: .get).responseJSON{ (responce) in
 
             let result = responce.result
