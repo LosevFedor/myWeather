@@ -21,7 +21,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaper1" translatesAutoresizingMaskIntoConstraints="NO" id="m7W-nh-5Tp">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qN2-KC-ufr">
+                            <button opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qN2-KC-ufr" customClass="ShadowBtn" customModule="myWeather" customModuleProvider="target">
                                 <rect key="frame" x="16" y="30" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="ra8-n8-cu0"/>
@@ -45,7 +45,7 @@
                                     <segue destination="7PE-vu-vd6" kind="presentation" id="17I-kL-9ZK"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="G6T-Xs-yjs">
+                            <segmentedControl opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="G6T-Xs-yjs" customClass="ShadowsSegmentControll" customModule="myWeather" customModuleProvider="target">
                                 <rect key="frame" x="20" y="82" width="335" height="29"/>
                                 <segments>
                                     <segment title="Now"/>
@@ -123,7 +123,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="549"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="LbV-nH-lBa">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="LbV-nH-lBa" customClass="Shadows" customModule="myWeather" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -270,7 +270,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="549"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="hyN-Wg-9xL">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="hyN-Wg-9xL" customClass="Shadows" customModule="myWeather" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -767,7 +767,7 @@
                                             <constraint firstAttribute="trailing" secondItem="zLV-m7-kJu" secondAttribute="trailing" constant="20" id="yx5-rm-Dfm"/>
                                         </constraints>
                                     </stackView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hCd-cq-q9k">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hCd-cq-q9k" customClass="Shadows" customModule="myWeather" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaperBord" translatesAutoresizingMaskIntoConstraints="NO" id="Q9v-Cg-7DW">
@@ -871,7 +871,7 @@
                                                         <color key="shadowColor" red="0.88200944660000002" green="0.89006263019999998" blue="0.90242308380000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <size key="shadowOffset" width="1" height="1"/>
                                                     </label>
-                                                    <segmentedControl opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="g0p-Yx-eJS">
+                                                    <segmentedControl opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="g0p-Yx-eJS" customClass="ShadowsSegmentControll" customModule="myWeather" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="30" width="160" height="29"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="4mC-di-H3M"/>
@@ -898,7 +898,7 @@
                                                         <color key="shadowColor" red="0.88200944660000002" green="0.89006263019999998" blue="0.90242308380000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <size key="shadowOffset" width="1" height="1"/>
                                                     </label>
-                                                    <segmentedControl opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xhm-7x-yhZ">
+                                                    <segmentedControl opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xhm-7x-yhZ" customClass="ShadowsSegmentControll" customModule="myWeather" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="26" width="160" height="23"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="DkZ-jJ-cEc"/>
@@ -928,7 +928,7 @@
                                                         <color key="shadowColor" red="0.88200944660000002" green="0.89006263019999998" blue="0.90242308380000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <size key="shadowOffset" width="1" height="1"/>
                                                     </label>
-                                                    <segmentedControl opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="B3d-kl-6vb">
+                                                    <segmentedControl opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="B3d-kl-6vb" customClass="ShadowsSegmentControll" customModule="myWeather" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="26" width="240" height="23"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="KH9-Ag-Hrx"/>
@@ -1001,7 +1001,7 @@
                                             <constraint firstAttribute="trailing" secondItem="OFX-b9-nut" secondAttribute="trailing" id="upw-4V-5YC"/>
                                         </constraints>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBr-xx-K11">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBr-xx-K11" customClass="ShadowBtn" customModule="myWeather" customModuleProvider="target">
                                         <rect key="frame" x="306" y="22" width="47" height="38"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
                                         <state key="normal" title="Done">

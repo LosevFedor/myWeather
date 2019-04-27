@@ -5,7 +5,6 @@
 //  Created by admin on 11.03.2019.
 //  Copyright © 2019 admin. All rights reserved.
 //
-
 let BASE_URL = "http://api.openweathermap.org/data/2.5/"
 
 let PERIOD_WEATHER = "weather?"

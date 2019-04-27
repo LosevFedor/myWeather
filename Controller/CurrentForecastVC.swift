@@ -28,8 +28,7 @@ class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet var visualTypeSpeed: UILabel!
     @IBOutlet var visualTypePressure: UILabel!
-    
-    
+        
     var currentWeather: CurrentWeather!
     
     var locationManager = CLLocationManager()
