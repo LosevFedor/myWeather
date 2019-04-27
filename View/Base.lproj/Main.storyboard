@@ -33,7 +33,7 @@
                                     <segue destination="lqm-eD-JTO" kind="presentation" id="YL8-bV-uoy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rts-4r-ezT">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rts-4r-ezT" customClass="ShadowBtn" customModule="myWeather" customModuleProvider="target">
                                 <rect key="frame" x="327" y="30" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="3aE-OJ-FIT"/>
