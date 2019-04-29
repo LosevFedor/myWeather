@@ -58,9 +58,6 @@ class Settings {
         
     }
     
-    //static var internalSequances = Settings()
-  
-    
     func loadData(){
         
         let request: NSFetchRequest<SettingsTable> = SettingsTable.fetchRequest()
@@ -78,9 +75,7 @@ class Settings {
                 
 
             }
-            /*print("selectTemp : \(selectTemp) \(globalValueTypeTemperature)")
-            print("selectPressure : \(selectPressure) \(globalValueTypePressure)")
-            print("selectWindSpeed : \(selectWindSpeed) \(globalValueTypeWindSpeed)")*/
+            
         }catch{
             print("Error fetch SettingsParameters objects \(error.localizedDescription)")
         }

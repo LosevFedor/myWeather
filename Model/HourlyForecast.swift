@@ -61,7 +61,6 @@ class HourlyForecast{
         if let dt = forecastDict["dt"] as? Double{
             let unixConverterDate = Date(timeIntervalSince1970: dt)
             self._hourlyTimePeriod = unixConverterDate.Hourly()
-//            print("self._hourlyTimePeriod: \(self._hourlyTimePeriod!)")
         }
         if let main = forecastDict["main"] as? Dictionary<String,Any>{
             if let temp = main["temp"] as? Double{
@@ -72,8 +71,6 @@ class HourlyForecast{
                     self._hourlyForecastTemp = setCelsiumDegree(temp)
                 }
                 
-//                print("self._hourlyForecastTemp: \(self._hourlyForecastTemp!)")
-
             }
         }
         if let weather = forecastDict["weather"] as? [Dictionary<String,Any>]{
@@ -81,8 +78,6 @@ class HourlyForecast{
                 _hourlyImageForecast = main
                 _hourlyTypeWeather = main
                 
-//                print("self._hourlyTimePeriod: \(self._hourlyImageForecast!)")
-
             }
         }
     }

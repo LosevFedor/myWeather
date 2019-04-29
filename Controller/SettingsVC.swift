@@ -36,7 +36,6 @@ class SettingsVC: UIViewController {
         case 0:
             globalValueTypeTemperature = "˚c"
             settings.selectTemp = 0
-            //sender.
         case 1:
             globalValueTypeTemperature = "˚f"
             settings.selectTemp = 1
