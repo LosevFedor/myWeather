@@ -55,7 +55,7 @@ class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        
+        locationAuthStatus()
     }
     func locationAuthStatus(){
         
@@ -135,6 +135,10 @@ class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
         emitter.emitterPosition = CGPoint(x: view.frame.width/2, y: 0)
         emitter.emitterSize = CGSize(width: view.frame.width, height: 2)
         view.layer.addSublayer(emitter)
+    }
+    
+    func reloadView() {
+        self.viewDidLoad()
     }
 }
 

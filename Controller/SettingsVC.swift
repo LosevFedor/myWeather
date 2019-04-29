@@ -79,6 +79,8 @@ class SettingsVC: UIViewController {
         coreDataStack.deleteParameters()
         settings.saveChangesToData()
 
+        let view = CurrentForecastVC()
+        view.reloadView()
         dismiss(animated: true, completion: nil)
     }
 
