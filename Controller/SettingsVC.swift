@@ -85,6 +85,8 @@ class SettingsVC: UIViewController {
         let hourlyTableView = HourlyTVController()
         hourlyTableView.updateHourlyTVAfterChangeSettings()
        
+        let daysTableView = DaysTVController()
+        daysTableView.updateDaysTVAfterChangeSettings()
         
         print("reload tableViwe")
 

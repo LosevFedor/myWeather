@@ -10,11 +10,8 @@ import UIKit
 import Alamofire
 import CoreLocation
 
-var currentWeather = CurrentWeather()
 var dayForecasts = [DaysForecast]()
 var daysWeak = [DaysForecast]()
-var dayForecast:DaysForecast!
-
 
 class DaysTVController: UITableViewController, CLLocationManagerDelegate {
     
@@ -22,6 +19,9 @@ class DaysTVController: UITableViewController, CLLocationManagerDelegate {
     
     var locationManager = CLLocationManager()
     var currentLocation: CLLocation!
+    
+    var currentWeather = CurrentWeather()
+    var dayForecast:DaysForecast!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,8 +47,6 @@ class DaysTVController: UITableViewController, CLLocationManagerDelegate {
             Location.sharedInstance.latitude = currentLocation.coordinate.latitude
             Location.sharedInstance.longitude = currentLocation.coordinate.longitude
             
-            //print("longitude \(currentLocation.coordinate.longitude) latitude \(currentLocation.coordinate.latitude)")
-            //print(HOURLY_WEATHER_URL)
             downloadHourlyForecastData {}
             
             // MARK: Stop updating location
@@ -61,10 +59,16 @@ class DaysTVController: UITableViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         locationManager = manager
-        
+
         //currentSityName.text = currentWeather.sityName
-        
+
         // Only called when variable have location data
+        locationAuthStatus()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         locationAuthStatus()
     }
     
@@ -75,10 +79,8 @@ class DaysTVController: UITableViewController, CLLocationManagerDelegate {
                 if let dict = result.value as? Dictionary<String,Any>{
                     if let list = dict["list"] as? [Dictionary<String, Any>]{
                         for obj in list{
-                            if dayForecasts.count < 40{
-                                dayForecast = DaysForecast(forecastDict:obj)
-                                dayForecasts.append(dayForecast)
-                            }
+                                self.dayForecast = DaysForecast(forecastDict:obj)
+                                dayForecasts.append(self.dayForecast)
                             
                         }
                         
@@ -125,50 +127,50 @@ class DaysTVController: UITableViewController, CLLocationManagerDelegate {
                             
                             if !daySunday.isEmpty {
                                 
-                                daySunday[0].minTemp = dayForecast.detectMinTempPerDay(daySunday)
-                                daySunday[0].maxTemp = dayForecast.detectMaxTempPerDay(daySunday)
+                                daySunday[0].minTemp = self.dayForecast.detectMinTempPerDay(daySunday)
+                                daySunday[0].maxTemp = self.dayForecast.detectMaxTempPerDay(daySunday)
                                 
                                 daysWeak.append(daySunday[0])
                             }
                             if !dayMonday.isEmpty {
                                 
-                                dayMonday[0].minTemp = dayForecast.detectMinTempPerDay(dayMonday)
-                                dayMonday[0].maxTemp = dayForecast.detectMaxTempPerDay(dayMonday)
+                                dayMonday[0].minTemp = self.dayForecast.detectMinTempPerDay(dayMonday)
+                                dayMonday[0].maxTemp = self.dayForecast.detectMaxTempPerDay(dayMonday)
                                 
                                 daysWeak.append(dayMonday[0])
                             }
                             if !dayTuesday.isEmpty {
                                 
-                                dayTuesday[0].minTemp = dayForecast.detectMinTempPerDay(dayTuesday)
-                                dayTuesday[0].maxTemp = dayForecast.detectMaxTempPerDay(dayTuesday)
+                                dayTuesday[0].minTemp = self.dayForecast.detectMinTempPerDay(dayTuesday)
+                                dayTuesday[0].maxTemp = self.dayForecast.detectMaxTempPerDay(dayTuesday)
                                 
                                 daysWeak.append(dayTuesday[0])
                             }
                             if !dayWednesday.isEmpty {
                                 
-                                dayWednesday[0].minTemp = dayForecast.detectMinTempPerDay(dayWednesday)
-                                dayWednesday[0].maxTemp = dayForecast.detectMaxTempPerDay(dayWednesday)
+                                dayWednesday[0].minTemp = self.dayForecast.detectMinTempPerDay(dayWednesday)
+                                dayWednesday[0].maxTemp = self.dayForecast.detectMaxTempPerDay(dayWednesday)
                                 
                                 daysWeak.append(dayWednesday[0])
                             }
                             if !dayThursday.isEmpty {
                                 
-                                dayThursday[0].minTemp = dayForecast.detectMinTempPerDay(dayThursday)
-                                dayThursday[0].maxTemp = dayForecast.detectMaxTempPerDay(dayThursday)
+                                dayThursday[0].minTemp = self.dayForecast.detectMinTempPerDay(dayThursday)
+                                dayThursday[0].maxTemp = self.dayForecast.detectMaxTempPerDay(dayThursday)
 
                                 daysWeak.append(dayThursday[0])
                             }
                             if !dayFriday.isEmpty {
                                 
-                                dayFriday[0].minTemp = dayForecast.detectMinTempPerDay(dayFriday)
-                                dayFriday[0].maxTemp = dayForecast.detectMaxTempPerDay(dayFriday)
+                                dayFriday[0].minTemp = self.dayForecast.detectMinTempPerDay(dayFriday)
+                                dayFriday[0].maxTemp = self.dayForecast.detectMaxTempPerDay(dayFriday)
                                 
                                 daysWeak.append(dayFriday[0])
                             }
                             if !daySaturday.isEmpty {
                                 
-                                daySaturday[0].minTemp = dayForecast.detectMinTempPerDay(daySaturday)
-                                daySaturday[0].maxTemp = dayForecast.detectMaxTempPerDay(daySaturday)
+                                daySaturday[0].minTemp = self.dayForecast.detectMinTempPerDay(daySaturday)
+                                daySaturday[0].maxTemp = self.dayForecast.detectMaxTempPerDay(daySaturday)
                                 
                                 daysWeak.append(daySaturday[0])
                             }
@@ -229,50 +231,18 @@ class DaysTVController: UITableViewController, CLLocationManagerDelegate {
         }
     }
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    func updateDaysTVAfterChangeSettings(){
+        daysWeak.removeAll()
+        dayForecasts.removeAll()
+        if daysWeak.count == 0 && dayForecasts.count == 0{ print("updated successfully") }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    @IBAction func updateForecastInDaysTVController(_ sender: Any) {
+        
+        daysWeak.removeAll()
+        dayForecasts.removeAll()
+        tableView.reloadData()
+        viewDidAppear(true)
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
