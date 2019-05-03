@@ -33,18 +33,6 @@
                                     <segue destination="lqm-eD-JTO" kind="presentation" id="YL8-bV-uoy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rts-4r-ezT" customClass="ShadowBtn" customModule="myWeather" customModuleProvider="target">
-                                <rect key="frame" x="327" y="30" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="3aE-OJ-FIT"/>
-                                    <constraint firstAttribute="height" constant="32" id="uMm-i2-8EL"/>
-                                </constraints>
-                                <color key="tintColor" red="0.37647058823529411" green="0.49019607843137253" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" image="add"/>
-                                <connections>
-                                    <segue destination="7PE-vu-vd6" kind="presentation" id="17I-kL-9ZK"/>
-                                </connections>
-                            </button>
                             <segmentedControl opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="G6T-Xs-yjs" customClass="ShadowsSegmentControll" customModule="myWeather" customModuleProvider="target">
                                 <rect key="frame" x="20" y="82" width="335" height="29"/>
                                 <segments>
@@ -84,10 +72,8 @@
                             <constraint firstItem="G6T-Xs-yjs" firstAttribute="leading" secondItem="SVb-6f-ESO" secondAttribute="leading" constant="20" id="9V7-Xb-HLR"/>
                             <constraint firstItem="SVb-6f-ESO" firstAttribute="bottom" secondItem="L5Q-po-kLB" secondAttribute="bottom" id="9ce-oA-3Te"/>
                             <constraint firstItem="SVb-6f-ESO" firstAttribute="trailing" secondItem="1Y3-nc-5ma" secondAttribute="trailing" id="AUN-9w-wOw"/>
-                            <constraint firstItem="SVb-6f-ESO" firstAttribute="trailing" secondItem="rts-4r-ezT" secondAttribute="trailing" constant="16" id="C5g-ku-rfY"/>
                             <constraint firstItem="qN2-KC-ufr" firstAttribute="leading" secondItem="SVb-6f-ESO" secondAttribute="leading" constant="16" id="EUr-k2-2gB"/>
                             <constraint firstItem="SVb-6f-ESO" firstAttribute="trailing" secondItem="G6T-Xs-yjs" secondAttribute="trailing" constant="20" id="Fz3-zV-nzp"/>
-                            <constraint firstItem="rts-4r-ezT" firstAttribute="top" secondItem="SVb-6f-ESO" secondAttribute="top" constant="10" id="GxH-Uy-ELP"/>
                             <constraint firstItem="qN2-KC-ufr" firstAttribute="top" secondItem="SVb-6f-ESO" secondAttribute="top" constant="10" id="H3m-fQ-jet"/>
                             <constraint firstItem="wCN-tm-jwn" firstAttribute="top" secondItem="G6T-Xs-yjs" secondAttribute="bottom" constant="8" id="HG0-ES-HZA"/>
                             <constraint firstItem="L5Q-po-kLB" firstAttribute="leading" secondItem="SVb-6f-ESO" secondAttribute="leading" id="QwJ-Sz-iVT"/>
@@ -152,14 +138,14 @@
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="40b-Tj-HdU">
-                            <rect key="frame" x="0.0" y="172" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="172" width="375" height="70"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaperBord" translatesAutoresizingMaskIntoConstraints="NO" id="mHr-wj-3ll">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHK-da-EuK" customClass="ShadowBtn" customModule="myWeather" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
                                     <state key="normal" title="Update hourly forecast">
                                         <color key="titleColor" red="0.93725490199999995" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -299,15 +285,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="549"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="hyN-Wg-9xL" customClass="Shadows" customModule="myWeather" customModuleProvider="target">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="hyN-Wg-9xL" customClass="Shadows" customModule="myWeather" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaperBord" translatesAutoresizingMaskIntoConstraints="NO" id="ZG2-7W-Bfm">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brooklyn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CqW-Pz-ZBt">
-                                    <rect key="frame" x="20" y="1" width="335" height="28.5"/>
+                                    <rect key="frame" x="20" y="0.0" width="335" height="44"/>
                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                     <color key="textColor" red="0.93725490199999995" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -317,25 +303,25 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="CqW-Pz-ZBt" firstAttribute="top" secondItem="hyN-Wg-9xL" secondAttribute="top" constant="1" id="88X-Mh-7gm"/>
                                 <constraint firstItem="CqW-Pz-ZBt" firstAttribute="leading" secondItem="hyN-Wg-9xL" secondAttribute="leading" constant="20" id="CMm-lC-aCM"/>
                                 <constraint firstAttribute="trailing" secondItem="ZG2-7W-Bfm" secondAttribute="trailing" id="TIb-7y-8Fd"/>
                                 <constraint firstAttribute="bottom" secondItem="ZG2-7W-Bfm" secondAttribute="bottom" id="VjX-OV-yie"/>
                                 <constraint firstItem="ZG2-7W-Bfm" firstAttribute="leading" secondItem="hyN-Wg-9xL" secondAttribute="leading" id="WNf-6s-lRk"/>
                                 <constraint firstAttribute="trailing" secondItem="CqW-Pz-ZBt" secondAttribute="trailing" constant="20" id="ca2-B3-MFY"/>
-                                <constraint firstAttribute="bottom" secondItem="CqW-Pz-ZBt" secondAttribute="bottom" constant="1" id="in3-RP-k9G"/>
+                                <constraint firstItem="CqW-Pz-ZBt" firstAttribute="top" secondItem="hyN-Wg-9xL" secondAttribute="top" id="m9o-YU-PPd"/>
                                 <constraint firstItem="ZG2-7W-Bfm" firstAttribute="top" secondItem="hyN-Wg-9xL" secondAttribute="top" id="miL-kk-01U"/>
+                                <constraint firstAttribute="bottom" secondItem="CqW-Pz-ZBt" secondAttribute="bottom" id="nep-qU-18r"/>
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="gQx-sL-ene">
-                            <rect key="frame" x="0.0" y="172" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="172" width="375" height="70"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaperBord" translatesAutoresizingMaskIntoConstraints="NO" id="Cee-bg-zI1">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWQ-SZ-NLR" customClass="ShadowBtn" customModule="myWeather" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="66" y="0.0" width="243" height="70"/>
                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
                                     <state key="normal" title="Update week forecast">
                                         <color key="titleColor" red="0.93725490199999995" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -347,7 +333,6 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="ZWQ-SZ-NLR" firstAttribute="leading" secondItem="gQx-sL-ene" secondAttribute="leading" id="0if-79-YkX"/>
                                 <constraint firstItem="Cee-bg-zI1" firstAttribute="centerX" secondItem="gQx-sL-ene" secondAttribute="centerX" id="93t-8k-rlx"/>
                                 <constraint firstItem="Cee-bg-zI1" firstAttribute="centerY" secondItem="gQx-sL-ene" secondAttribute="centerY" id="AQV-iT-UoP"/>
                                 <constraint firstAttribute="bottom" secondItem="Cee-bg-zI1" secondAttribute="bottom" id="GvQ-GA-xHO"/>
@@ -355,7 +340,6 @@
                                 <constraint firstItem="Cee-bg-zI1" firstAttribute="top" secondItem="gQx-sL-ene" secondAttribute="top" id="TYv-8s-go8"/>
                                 <constraint firstItem="ZWQ-SZ-NLR" firstAttribute="centerY" secondItem="gQx-sL-ene" secondAttribute="centerY" id="b3N-6b-JBt"/>
                                 <constraint firstItem="ZWQ-SZ-NLR" firstAttribute="centerX" secondItem="gQx-sL-ene" secondAttribute="centerX" id="fxG-9u-qEI"/>
-                                <constraint firstAttribute="trailing" secondItem="ZWQ-SZ-NLR" secondAttribute="trailing" id="kxR-ZZ-vmY"/>
                                 <constraint firstItem="ZWQ-SZ-NLR" firstAttribute="top" secondItem="gQx-sL-ene" secondAttribute="top" id="rlI-2t-3ZL"/>
                                 <constraint firstAttribute="trailing" secondItem="Cee-bg-zI1" secondAttribute="trailing" id="t9R-m5-7RE"/>
                                 <constraint firstItem="Cee-bg-zI1" firstAttribute="leading" secondItem="gQx-sL-ene" secondAttribute="leading" id="tp6-A2-bOB"/>
@@ -521,34 +505,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Dc-fF-Uw2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="204" y="-768.66566716641682"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="csJ-1T-F9k">
-            <objects>
-                <tableViewController id="7PE-vu-vd6" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Caz-Bx-bYA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="hnT-by-Gf2">
-                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hnT-by-Gf2" id="Q5f-ja-RiG">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="7PE-vu-vd6" id="kTp-UP-YJu"/>
-                            <outlet property="delegate" destination="7PE-vu-vd6" id="5kD-TA-Syn"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9M4-Vu-y4R" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1116" y="-251.42428785607197"/>
         </scene>
         <!--Current ForecastVC-->
         <scene sceneID="tne-QT-ifu">
@@ -854,8 +810,9 @@
                                             <constraint firstAttribute="trailing" secondItem="xC6-gl-dwu" secondAttribute="trailing" constant="20" id="zxA-PW-PuZ"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJv-KU-rFT">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJv-KU-rFT" customClass="ShadowBtn" customModule="myWeather" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="479" width="375" height="70"/>
+                                        <color key="backgroundColor" red="0.93725490196078431" green="0.60392156862745094" blue="0.60392156862745094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="clj-jt-NaJ"/>
                                         </constraints>
@@ -1129,7 +1086,6 @@
         <image name="Clouds" width="256" height="203.5"/>
         <image name="Down" width="64" height="64"/>
         <image name="Up" width="64" height="64"/>
-        <image name="add" width="32" height="32"/>
         <image name="settings" width="32" height="32"/>
         <image name="wallpaper1" width="820" height="532"/>
         <image name="wallpaperBord" width="818" height="160"/>

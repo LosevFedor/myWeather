@@ -11,7 +11,7 @@ import UIKit
 
 class Emitter {
     
-    private static let rain = #imageLiteral(resourceName: "Drop")
+    private static let rain = #imageLiteral(resourceName: "Raindrop")
     private static let snow = #imageLiteral(resourceName: "Snow")
     
     static func get(with type:String) -> CAEmitterLayer{
@@ -55,7 +55,7 @@ class Emitter {
     private static func todayRain () -> CAEmitterCell{
         let cell = CAEmitterCell()
         cell.contents = rain.cgImage
-        cell.birthRate = 20
+        cell.birthRate = 5
         cell.lifetime = 32
         cell.velocity = CGFloat(1000)
         cell.emissionLongitude = 180*(.pi/180)
