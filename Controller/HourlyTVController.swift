@@ -66,13 +66,13 @@ class HourlyTVController: UITableViewController, CLLocationManagerDelegate {
 
         // Only called when variable have location data
         locationAuthStatus()
-        tableView.reloadData()
     }
     
     func downloadHourlyForecastData(completed: @escaping DownloadComplete){
         Alamofire.request(HOURLY_WEATHER_URL, method: .get).responseJSON{ (responce) in
             
             let result = responce.result
+            if hourlyForecasts.count < 24{
                 if let dict = result.value as? Dictionary<String,Any>{
                     if let list = dict["list"] as? [Dictionary<String, Any>]{
                         for obj in list{
@@ -87,6 +87,7 @@ class HourlyTVController: UITableViewController, CLLocationManagerDelegate {
                     }
                     self.tableView.reloadData()
                 }
+            }
             completed()
         }
     }

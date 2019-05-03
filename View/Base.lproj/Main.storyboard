@@ -151,24 +151,38 @@
                                 <constraint firstAttribute="trailing" secondItem="gyu-hA-uTa" secondAttribute="trailing" id="oTQ-Uz-jUE"/>
                             </constraints>
                         </view>
-                        <view key="tableFooterView" contentMode="scaleToFill" misplaced="YES" id="40b-Tj-HdU">
+                        <view key="tableFooterView" contentMode="scaleToFill" id="40b-Tj-HdU">
                             <rect key="frame" x="0.0" y="172" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAp-qO-y8U">
-                                    <rect key="frame" x="152" y="7" width="46" height="30"/>
-                                    <state key="normal" title="Button"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaperBord" translatesAutoresizingMaskIntoConstraints="NO" id="mHr-wj-3ll">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHK-da-EuK" customClass="ShadowBtn" customModule="myWeather" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
+                                    <state key="normal" title="Update hourly forecast">
+                                        <color key="titleColor" red="0.93725490199999995" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
                                     <connections>
-                                        <action selector="updateForecastInHourlyTVController:" destination="P30-ma-Ql8" eventType="touchUpInside" id="yhp-Z9-jH9"/>
+                                        <action selector="updateForecastInHourlyTVController:" destination="P30-ma-Ql8" eventType="touchUpInside" id="dCg-7t-gMN"/>
                                     </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="OAp-qO-y8U" secondAttribute="trailing" constant="177" id="Bnq-9M-7W0"/>
-                                <constraint firstItem="OAp-qO-y8U" firstAttribute="leading" secondItem="40b-Tj-HdU" secondAttribute="leading" constant="152" id="CLl-TL-P27"/>
-                                <constraint firstItem="OAp-qO-y8U" firstAttribute="top" secondItem="40b-Tj-HdU" secondAttribute="top" constant="7" id="Nxu-iq-eh4"/>
-                                <constraint firstAttribute="bottom" secondItem="OAp-qO-y8U" secondAttribute="bottom" constant="7" id="ci7-BC-5MV"/>
+                                <constraint firstItem="lHK-da-EuK" firstAttribute="top" secondItem="40b-Tj-HdU" secondAttribute="top" id="4Br-CJ-F3Z"/>
+                                <constraint firstAttribute="trailing" secondItem="lHK-da-EuK" secondAttribute="trailing" id="BBg-H9-BHw"/>
+                                <constraint firstAttribute="trailing" secondItem="mHr-wj-3ll" secondAttribute="trailing" id="Tdu-mk-WsE"/>
+                                <constraint firstItem="mHr-wj-3ll" firstAttribute="centerY" secondItem="40b-Tj-HdU" secondAttribute="centerY" id="VJl-7T-zQz"/>
+                                <constraint firstAttribute="bottom" secondItem="lHK-da-EuK" secondAttribute="bottom" id="WC6-Ht-vB8"/>
+                                <constraint firstAttribute="bottom" secondItem="mHr-wj-3ll" secondAttribute="bottom" id="WDh-Yy-PCg"/>
+                                <constraint firstItem="lHK-da-EuK" firstAttribute="leading" secondItem="40b-Tj-HdU" secondAttribute="leading" id="eej-dk-0TQ"/>
+                                <constraint firstItem="mHr-wj-3ll" firstAttribute="centerX" secondItem="40b-Tj-HdU" secondAttribute="centerX" id="fjc-TZ-f8a"/>
+                                <constraint firstItem="lHK-da-EuK" firstAttribute="centerY" secondItem="40b-Tj-HdU" secondAttribute="centerY" id="fu6-1b-9AU"/>
+                                <constraint firstItem="mHr-wj-3ll" firstAttribute="top" secondItem="40b-Tj-HdU" secondAttribute="top" id="hEl-oP-yQX"/>
+                                <constraint firstItem="lHK-da-EuK" firstAttribute="centerX" secondItem="40b-Tj-HdU" secondAttribute="centerX" id="kpc-AF-UDS"/>
+                                <constraint firstItem="mHr-wj-3ll" firstAttribute="leading" secondItem="40b-Tj-HdU" secondAttribute="leading" id="ytB-09-wLs"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -317,20 +331,34 @@
                             <rect key="frame" x="0.0" y="172" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFD-Fr-aTu">
-                                    <rect key="frame" x="164" y="8" width="46" height="30"/>
-                                    <state key="normal" title="Button"/>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaperBord" translatesAutoresizingMaskIntoConstraints="NO" id="Cee-bg-zI1">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWQ-SZ-NLR" customClass="ShadowBtn" customModule="myWeather" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
+                                    <state key="normal" title="Update week forecast">
+                                        <color key="titleColor" red="0.93725490199999995" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
                                     <connections>
-                                        <action selector="updateForecastInDaysTVController:" destination="fWE-gF-kX8" eventType="touchUpInside" id="sw1-6T-nVY"/>
+                                        <action selector="updateForecastInDaysTVController:" destination="fWE-gF-kX8" eventType="touchUpInside" id="BVY-B2-pAO"/>
                                     </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="iFD-Fr-aTu" firstAttribute="top" secondItem="gQx-sL-ene" secondAttribute="top" constant="8" id="AjM-F0-Bgv"/>
-                                <constraint firstItem="iFD-Fr-aTu" firstAttribute="leading" secondItem="gQx-sL-ene" secondAttribute="leading" constant="164" id="Tsy-J6-HdN"/>
-                                <constraint firstAttribute="bottom" secondItem="iFD-Fr-aTu" secondAttribute="bottom" constant="6" id="qfT-5D-lqL"/>
-                                <constraint firstAttribute="trailing" secondItem="iFD-Fr-aTu" secondAttribute="trailing" constant="165" id="zYe-z0-nL0"/>
+                                <constraint firstItem="ZWQ-SZ-NLR" firstAttribute="leading" secondItem="gQx-sL-ene" secondAttribute="leading" id="0if-79-YkX"/>
+                                <constraint firstItem="Cee-bg-zI1" firstAttribute="centerX" secondItem="gQx-sL-ene" secondAttribute="centerX" id="93t-8k-rlx"/>
+                                <constraint firstItem="Cee-bg-zI1" firstAttribute="centerY" secondItem="gQx-sL-ene" secondAttribute="centerY" id="AQV-iT-UoP"/>
+                                <constraint firstAttribute="bottom" secondItem="Cee-bg-zI1" secondAttribute="bottom" id="GvQ-GA-xHO"/>
+                                <constraint firstAttribute="bottom" secondItem="ZWQ-SZ-NLR" secondAttribute="bottom" id="RTH-7g-yuj"/>
+                                <constraint firstItem="Cee-bg-zI1" firstAttribute="top" secondItem="gQx-sL-ene" secondAttribute="top" id="TYv-8s-go8"/>
+                                <constraint firstItem="ZWQ-SZ-NLR" firstAttribute="centerY" secondItem="gQx-sL-ene" secondAttribute="centerY" id="b3N-6b-JBt"/>
+                                <constraint firstItem="ZWQ-SZ-NLR" firstAttribute="centerX" secondItem="gQx-sL-ene" secondAttribute="centerX" id="fxG-9u-qEI"/>
+                                <constraint firstAttribute="trailing" secondItem="ZWQ-SZ-NLR" secondAttribute="trailing" id="kxR-ZZ-vmY"/>
+                                <constraint firstItem="ZWQ-SZ-NLR" firstAttribute="top" secondItem="gQx-sL-ene" secondAttribute="top" id="rlI-2t-3ZL"/>
+                                <constraint firstAttribute="trailing" secondItem="Cee-bg-zI1" secondAttribute="trailing" id="t9R-m5-7RE"/>
+                                <constraint firstItem="Cee-bg-zI1" firstAttribute="leading" secondItem="gQx-sL-ene" secondAttribute="leading" id="tp6-A2-bOB"/>
                             </constraints>
                         </view>
                         <prototypes>

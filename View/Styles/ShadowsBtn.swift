@@ -13,7 +13,8 @@ class ShadowBtn: UIButton {
         super.awakeFromNib()
         
         layer.shadowColor = UIColor.lightGray.cgColor
-        layer.shadowOpacity = 3
+        layer.shadowOpacity = 2
         layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        layer.cornerRadius = 5.0
     }
 }
