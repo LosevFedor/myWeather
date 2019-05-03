@@ -123,15 +123,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="549"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="LbV-nH-lBa" customClass="Shadows" customModule="myWeather" customModuleProvider="target">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="LbV-nH-lBa" customClass="Shadows" customModule="myWeather" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaperBord" translatesAutoresizingMaskIntoConstraints="NO" id="gyu-hA-uTa">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brooklyn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zP0-5g-nog">
-                                    <rect key="frame" x="20" y="1" width="335" height="42"/>
+                                    <rect key="frame" x="20" y="1" width="335" height="28.5"/>
                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                     <color key="textColor" red="0.93725490199999995" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -151,10 +151,25 @@
                                 <constraint firstAttribute="trailing" secondItem="gyu-hA-uTa" secondAttribute="trailing" id="oTQ-Uz-jUE"/>
                             </constraints>
                         </view>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="40b-Tj-HdU">
+                        <view key="tableFooterView" contentMode="scaleToFill" misplaced="YES" id="40b-Tj-HdU">
                             <rect key="frame" x="0.0" y="172" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAp-qO-y8U">
+                                    <rect key="frame" x="152" y="7" width="46" height="30"/>
+                                    <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="updateForecastInHourlyTVController:" destination="P30-ma-Ql8" eventType="touchUpInside" id="yhp-Z9-jH9"/>
+                                    </connections>
+                                </button>
+                            </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="OAp-qO-y8U" secondAttribute="trailing" constant="177" id="Bnq-9M-7W0"/>
+                                <constraint firstItem="OAp-qO-y8U" firstAttribute="leading" secondItem="40b-Tj-HdU" secondAttribute="leading" constant="152" id="CLl-TL-P27"/>
+                                <constraint firstItem="OAp-qO-y8U" firstAttribute="top" secondItem="40b-Tj-HdU" secondAttribute="top" constant="7" id="Nxu-iq-eh4"/>
+                                <constraint firstAttribute="bottom" secondItem="OAp-qO-y8U" secondAttribute="bottom" constant="7" id="ci7-BC-5MV"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="hourlyId" rowHeight="100" id="jx5-ly-qi8" customClass="HourlyTVCell" customModule="myWeather" customModuleProvider="target">
@@ -270,15 +285,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="549"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="hyN-Wg-9xL" customClass="Shadows" customModule="myWeather" customModuleProvider="target">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="hyN-Wg-9xL" customClass="Shadows" customModule="myWeather" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaperBord" translatesAutoresizingMaskIntoConstraints="NO" id="ZG2-7W-Bfm">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brooklyn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CqW-Pz-ZBt">
-                                    <rect key="frame" x="20" y="1" width="335" height="42"/>
+                                    <rect key="frame" x="20" y="1" width="335" height="28.5"/>
                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                     <color key="textColor" red="0.93725490199999995" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -301,7 +316,22 @@
                         <view key="tableFooterView" contentMode="scaleToFill" id="gQx-sL-ene">
                             <rect key="frame" x="0.0" y="172" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFD-Fr-aTu">
+                                    <rect key="frame" x="164" y="8" width="46" height="30"/>
+                                    <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="updateForecastInDaysTVController:" destination="fWE-gF-kX8" eventType="touchUpInside" id="sw1-6T-nVY"/>
+                                    </connections>
+                                </button>
+                            </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="iFD-Fr-aTu" firstAttribute="top" secondItem="gQx-sL-ene" secondAttribute="top" constant="8" id="AjM-F0-Bgv"/>
+                                <constraint firstItem="iFD-Fr-aTu" firstAttribute="leading" secondItem="gQx-sL-ene" secondAttribute="leading" constant="164" id="Tsy-J6-HdN"/>
+                                <constraint firstAttribute="bottom" secondItem="iFD-Fr-aTu" secondAttribute="bottom" constant="6" id="qfT-5D-lqL"/>
+                                <constraint firstAttribute="trailing" secondItem="iFD-Fr-aTu" secondAttribute="trailing" constant="165" id="zYe-z0-nL0"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="daysId" rowHeight="100" id="dKH-1d-6ks" customClass="DaysTVCell" customModule="myWeather" customModuleProvider="target">

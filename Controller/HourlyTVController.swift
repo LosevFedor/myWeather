@@ -61,13 +61,13 @@ class HourlyTVController: UITableViewController, CLLocationManagerDelegate {
         locationAuthStatus()
     }
     
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        locationManager = manager
-//
-//        // Only called when variable have location data
-//        locationAuthStatus()
-//        tableView.reloadData()
-//    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        locationManager = manager
+
+        // Only called when variable have location data
+        locationAuthStatus()
+        tableView.reloadData()
+    }
     
     func downloadHourlyForecastData(completed: @escaping DownloadComplete){
         Alamofire.request(HOURLY_WEATHER_URL, method: .get).responseJSON{ (responce) in
@@ -114,6 +114,17 @@ class HourlyTVController: UITableViewController, CLLocationManagerDelegate {
         }else{
             return HourlyTVCell()
         }
+    }
+    
+    @IBAction func updateForecastInHourlyTVController(_ sender: Any) {
+  
+        print(hourlyForecasts.count)
+        hourlyForecasts.removeAll()
+        print(hourlyForecasts.count)
+        tableView.reloadData()
+        
+        viewDidAppear(true)
+        print("reload tableViwe")
     }
     
 }
