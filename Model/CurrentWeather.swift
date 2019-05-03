@@ -58,10 +58,10 @@ class CurrentWeather{
         
         let dateFormatter = DateFormatter()
         
-        dateFormatter.dateStyle = .long
+        dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .medium
         let currentDate = dateFormatter.string(from: Date())
-        _date = "\(currentDate)"
+        _date = "Last update: \(currentDate)"
         
         return _date
     }

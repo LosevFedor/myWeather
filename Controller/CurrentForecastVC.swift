@@ -46,7 +46,7 @@ class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
         locationManager.startMonitoringSignificantLocationChanges()
         locationManager.startUpdatingLocation()
         
-        //precipitation("Snow")
+        //precipitation("Rain")
 
         
     }
@@ -73,8 +73,7 @@ class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
             locationManager.stopUpdatingLocation()
             
         }else{
-            //locationManager.requestWhenInUseAuthorization()
-            //locationAuthStatus()
+            
         }
     }
     
@@ -138,5 +137,10 @@ class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
     func reloadView() {
         self.viewDidLoad()
     }
+    
+    @IBAction func updateCurrentForecast(_ sender: Any){
+        self.viewDidLoad()
+    }
+    
 }
 

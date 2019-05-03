@@ -571,17 +571,21 @@
                                                 <rect key="frame" x="20" y="0.0" width="295" height="131"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="QKF-qM-JyN">
-                                                        <rect key="frame" x="20" y="0.0" width="255" height="21.5"/>
+                                                        <rect key="frame" x="45.5" y="0.0" width="204" height="21.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="March 29, 2019 at 8:23:27 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ir-n0-nde">
-                                                                <rect key="frame" x="11" y="0.0" width="233.5" height="21.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="204" height="21.5"/>
+                                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                                                 <color key="textColor" red="0.37647058823529411" green="0.49019607843137253" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                                 <color key="shadowColor" red="0.88200944660000002" green="0.89006263019999998" blue="0.90242308380000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <size key="shadowOffset" width="1" height="1"/>
                                                             </label>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="4Ir-n0-nde" secondAttribute="trailing" id="JUW-X2-iaV"/>
+                                                            <constraint firstItem="4Ir-n0-nde" firstAttribute="leading" secondItem="QKF-qM-JyN" secondAttribute="leading" id="U45-zB-JpQ"/>
+                                                        </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0a7-Ve-xdh">
                                                         <rect key="frame" x="46.5" y="21.5" width="202.5" height="109.5"/>
@@ -606,8 +610,6 @@
                                                     </stackView>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="QKF-qM-JyN" secondAttribute="trailing" constant="20" id="bUN-N5-pBL"/>
-                                                    <constraint firstItem="QKF-qM-JyN" firstAttribute="leading" secondItem="zLV-m7-kJu" secondAttribute="leading" constant="20" id="bZo-6G-v3G"/>
                                                     <constraint firstItem="0a7-Ve-xdh" firstAttribute="centerX" secondItem="zLV-m7-kJu" secondAttribute="centerX" id="p6L-MU-YUB"/>
                                                 </constraints>
                                             </stackView>
@@ -852,15 +854,31 @@
                                             <constraint firstAttribute="trailing" secondItem="xC6-gl-dwu" secondAttribute="trailing" constant="20" id="zxA-PW-PuZ"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJv-KU-rFT">
+                                        <rect key="frame" x="0.0" y="479" width="375" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="clj-jt-NaJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
+                                        <state key="normal" title="Update forecast">
+                                            <color key="titleColor" red="1" green="1" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="updateCurrentForecast:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U1w-GA-dHU"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.24705882352941178" green="0.83137254901960778" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="tnY-UK-TPC" firstAttribute="top" secondItem="hCd-cq-q9k" secondAttribute="bottom" constant="16" id="31Q-3a-vJr"/>
+                                    <constraint firstAttribute="trailing" secondItem="cJv-KU-rFT" secondAttribute="trailing" id="4sR-yb-KbQ"/>
                                     <constraint firstItem="hCd-cq-q9k" firstAttribute="top" secondItem="7o3-7h-dgl" secondAttribute="top" id="61T-sV-R57"/>
                                     <constraint firstAttribute="bottom" secondItem="dLN-TE-foA" secondAttribute="bottom" id="7Af-AL-pNc"/>
                                     <constraint firstAttribute="trailing" secondItem="tnY-UK-TPC" secondAttribute="trailing" constant="20" id="Mp5-Dw-VPz"/>
                                     <constraint firstAttribute="trailing" secondItem="hCd-cq-q9k" secondAttribute="trailing" id="MwM-dI-eVJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="cJv-KU-rFT" secondAttribute="bottom" id="Uf1-FF-Vfl"/>
                                     <constraint firstItem="dLN-TE-foA" firstAttribute="top" secondItem="7o3-7h-dgl" secondAttribute="top" constant="40" id="WEm-Ds-lmJ"/>
+                                    <constraint firstItem="cJv-KU-rFT" firstAttribute="leading" secondItem="7o3-7h-dgl" secondAttribute="leading" id="dc8-59-fVz"/>
                                     <constraint firstAttribute="trailing" secondItem="dLN-TE-foA" secondAttribute="trailing" id="jew-J4-dLf"/>
                                     <constraint firstItem="tnY-UK-TPC" firstAttribute="leading" secondItem="7o3-7h-dgl" secondAttribute="leading" constant="20" id="kd3-jA-tye"/>
                                     <constraint firstItem="hCd-cq-q9k" firstAttribute="leading" secondItem="7o3-7h-dgl" secondAttribute="leading" id="nQU-wx-ucI"/>
