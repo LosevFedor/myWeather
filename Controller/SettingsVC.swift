@@ -81,6 +81,13 @@ class SettingsVC: UIViewController {
 
         let view = CurrentForecastVC()
         view.reloadView()
+        
+        let hourlyTableView = HourlyTVController()
+        hourlyTableView.updateHourlyTVAfterChangeSettings()
+       
+        
+        print("reload tableViwe")
+
         dismiss(animated: true, completion: nil)
     }
 

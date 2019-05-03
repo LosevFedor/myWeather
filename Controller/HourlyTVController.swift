@@ -10,12 +10,14 @@ import UIKit
 import Alamofire
 import CoreLocation
 
+var hourlyForecasts = [HourlyForecast]()
+
+
 class HourlyTVController: UITableViewController, CLLocationManagerDelegate {
 
     @IBOutlet var currentSityName: UILabel!
     
     var hourlyForecast: HourlyForecast!
-    var hourlyForecasts = [HourlyForecast]()
     let currentWeather = CurrentWeather()
     
     var locationManager = CLLocationManager()
@@ -32,7 +34,7 @@ class HourlyTVController: UITableViewController, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startMonitoringSignificantLocationChanges()
         locationManager.startUpdatingLocation()
-                
+                        
     }
 
     func locationAuthStatus(){
@@ -43,8 +45,6 @@ class HourlyTVController: UITableViewController, CLLocationManagerDelegate {
             Location.sharedInstance.latitude = currentLocation.coordinate.latitude
             Location.sharedInstance.longitude = currentLocation.coordinate.longitude
             
-            //print("longitude \(currentLocation.coordinate.longitude) latitude \(currentLocation.coordinate.latitude)")
-            //print("HOURLY_WEATHER_URL: \(HOURLY_WEATHER_URL)")
             downloadHourlyForecastData {}
             
             // MARK: Stop updating location
@@ -55,27 +55,30 @@ class HourlyTVController: UITableViewController, CLLocationManagerDelegate {
         }
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        locationManager = manager
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        // Only called when variable have location data
         locationAuthStatus()
     }
+    
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        locationManager = manager
+//
+//        // Only called when variable have location data
+//        locationAuthStatus()
+//        tableView.reloadData()
+//    }
     
     func downloadHourlyForecastData(completed: @escaping DownloadComplete){
         Alamofire.request(HOURLY_WEATHER_URL, method: .get).responseJSON{ (responce) in
             
             let result = responce.result
-            if self.hourlyForecasts.count < 24{
                 if let dict = result.value as? Dictionary<String,Any>{
                     if let list = dict["list"] as? [Dictionary<String, Any>]{
                         for obj in list{
                                 self.hourlyForecast = HourlyForecast(forecastDict:obj)
-                                self.hourlyForecasts.append(self.hourlyForecast)
-                                print(self.hourlyForecast)
+                                hourlyForecasts.append(self.hourlyForecast)
                         }
-                        //let unique = Array(self.hourlyForecasts)
-                        
                     }
                     if let city = dict["city"] as? Dictionary<String,Any>{
                         if let name = city["name"] as? String{
@@ -84,11 +87,14 @@ class HourlyTVController: UITableViewController, CLLocationManagerDelegate {
                     }
                     self.tableView.reloadData()
                 }
-            }
             completed()
         }
     }
     
+    func updateHourlyTVAfterChangeSettings(){
+        hourlyForecasts.removeAll()
+        if hourlyForecasts.count == 0 { print("updated suckesuly") }
+    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -111,20 +117,3 @@ class HourlyTVController: UITableViewController, CLLocationManagerDelegate {
     }
     
 }
-
-//extension Array where Element : Equatable {
-//    var unique: [Element] {
-//        var uniqueValues: [Element] = []
-//        forEach { item in
-//            if !uniqueValues.contains(item) {
-//                uniqueValues += [item]
-//            }
-//        }
-//        return uniqueValues
-//    }
-//}
-//extension Array where Element : Hashable {
-//    var unique: [Element] {
-//        return Array(Set(self))
-//    }
-//}
