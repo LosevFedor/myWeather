@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dmy-Rt-yoB">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dmy-Rt-yoB">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,10 +20,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qN2-KC-ufr" customClass="ShadowBtn" customModule="myWeather" customModuleProvider="target">
-                                <rect key="frame" x="16" y="30" width="32" height="32"/>
+                                <rect key="frame" x="16" y="10" width="44" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="ra8-n8-cu0"/>
-                                    <constraint firstAttribute="height" constant="32" id="zvS-5F-kaf"/>
+                                    <constraint firstAttribute="width" constant="44" id="ra8-n8-cu0"/>
+                                    <constraint firstAttribute="height" constant="44" id="zvS-5F-kaf"/>
                                 </constraints>
                                 <color key="tintColor" red="0.37647058823529411" green="0.49019607843137253" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="settings"/>
@@ -34,31 +32,31 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="G6T-Xs-yjs" customClass="ShadowsSegmentControll" customModule="myWeather" customModuleProvider="target">
-                                <rect key="frame" x="20" y="82" width="335" height="29"/>
+                                <rect key="frame" x="20" y="59" width="335" height="32"/>
                                 <segments>
                                     <segment title="Now"/>
-                                    <segment title="24 Hous"/>
+                                    <segment title="3h/3 days"/>
                                     <segment title="6 Days"/>
                                 </segments>
-                                <color key="tintColor" red="1" green="0.32156862745098036" blue="0.32156862745098036" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="selectedSegmentTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="switchViews:" destination="dmy-Rt-yoB" eventType="valueChanged" id="1Da-vU-6gv"/>
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCN-tm-jwn">
-                                <rect key="frame" x="0.0" y="118" width="375" height="549"/>
+                                <rect key="frame" x="0.0" y="98" width="375" height="569"/>
                                 <connections>
                                     <segue destination="fWE-gF-kX8" kind="embed" id="RPI-a1-ifZ"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L5Q-po-kLB">
-                                <rect key="frame" x="0.0" y="118" width="375" height="549"/>
+                                <rect key="frame" x="0.0" y="98" width="375" height="569"/>
                                 <connections>
                                     <segue destination="P30-ma-Ql8" kind="embed" id="rJ7-jR-r9g"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Y3-nc-5ma">
-                                <rect key="frame" x="0.0" y="118" width="375" height="549"/>
+                                <rect key="frame" x="0.0" y="98" width="375" height="569"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="embed" id="9rS-5w-xRQ"/>
                                 </connections>
@@ -82,7 +80,7 @@
                             <constraint firstItem="SVb-6f-ESO" firstAttribute="trailing" secondItem="wCN-tm-jwn" secondAttribute="trailing" id="YKB-98-Bxw"/>
                             <constraint firstItem="SVb-6f-ESO" firstAttribute="bottom" secondItem="1Y3-nc-5ma" secondAttribute="bottom" id="aYG-dy-4Qc"/>
                             <constraint firstItem="SVb-6f-ESO" firstAttribute="trailing" secondItem="L5Q-po-kLB" secondAttribute="trailing" id="hKy-vI-ayu"/>
-                            <constraint firstItem="G6T-Xs-yjs" firstAttribute="top" secondItem="qN2-KC-ufr" secondAttribute="bottom" constant="20" id="md4-Nk-LIT"/>
+                            <constraint firstItem="G6T-Xs-yjs" firstAttribute="top" secondItem="qN2-KC-ufr" secondAttribute="bottom" constant="5" id="md4-Nk-LIT"/>
                             <constraint firstItem="1Y3-nc-5ma" firstAttribute="top" secondItem="G6T-Xs-yjs" secondAttribute="bottom" constant="8" id="qHY-ew-R8Q"/>
                             <constraint firstItem="1Y3-nc-5ma" firstAttribute="leading" secondItem="SVb-6f-ESO" secondAttribute="leading" id="uvK-Ij-BOA"/>
                             <constraint firstItem="m7W-nh-5Tp" firstAttribute="top" secondItem="s9b-0d-bKT" secondAttribute="top" id="vMu-3I-Mok"/>
@@ -105,19 +103,19 @@
         <scene sceneID="UQm-UL-22a">
             <objects>
                 <tableViewController id="P30-ma-Ql8" customClass="HourlyTVController" customModule="myWeather" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rYF-4o-5RE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="549"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rYF-4o-5RE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="569"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="LbV-nH-lBa" customClass="Shadows" customModule="myWeather" customModuleProvider="target">
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="LbV-nH-lBa" customClass="Shadows" customModule="myWeather" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaperBord" translatesAutoresizingMaskIntoConstraints="NO" id="gyu-hA-uTa">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brooklyn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zP0-5g-nog">
-                                    <rect key="frame" x="20" y="1" width="335" height="28.5"/>
+                                    <rect key="frame" x="20" y="1" width="335" height="42"/>
                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                     <color key="textColor" red="0.93725490199999995" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -138,14 +136,14 @@
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="40b-Tj-HdU">
-                            <rect key="frame" x="0.0" y="172" width="375" height="70"/>
+                            <rect key="frame" x="0.0" y="200" width="375" height="70"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaperBord" translatesAutoresizingMaskIntoConstraints="NO" id="mHr-wj-3ll">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHK-da-EuK" customClass="ShadowBtn" customModule="myWeather" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                    <rect key="frame" x="60.5" y="0.0" width="254" height="70"/>
                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
                                     <state key="normal" title="Update hourly forecast">
                                         <color key="titleColor" red="0.93725490199999995" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -158,12 +156,10 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="lHK-da-EuK" firstAttribute="top" secondItem="40b-Tj-HdU" secondAttribute="top" id="4Br-CJ-F3Z"/>
-                                <constraint firstAttribute="trailing" secondItem="lHK-da-EuK" secondAttribute="trailing" id="BBg-H9-BHw"/>
                                 <constraint firstAttribute="trailing" secondItem="mHr-wj-3ll" secondAttribute="trailing" id="Tdu-mk-WsE"/>
                                 <constraint firstItem="mHr-wj-3ll" firstAttribute="centerY" secondItem="40b-Tj-HdU" secondAttribute="centerY" id="VJl-7T-zQz"/>
                                 <constraint firstAttribute="bottom" secondItem="lHK-da-EuK" secondAttribute="bottom" id="WC6-Ht-vB8"/>
                                 <constraint firstAttribute="bottom" secondItem="mHr-wj-3ll" secondAttribute="bottom" id="WDh-Yy-PCg"/>
-                                <constraint firstItem="lHK-da-EuK" firstAttribute="leading" secondItem="40b-Tj-HdU" secondAttribute="leading" id="eej-dk-0TQ"/>
                                 <constraint firstItem="mHr-wj-3ll" firstAttribute="centerX" secondItem="40b-Tj-HdU" secondAttribute="centerX" id="fjc-TZ-f8a"/>
                                 <constraint firstItem="lHK-da-EuK" firstAttribute="centerY" secondItem="40b-Tj-HdU" secondAttribute="centerY" id="fu6-1b-9AU"/>
                                 <constraint firstItem="mHr-wj-3ll" firstAttribute="top" secondItem="40b-Tj-HdU" secondAttribute="top" id="hEl-oP-yQX"/>
@@ -176,7 +172,7 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jx5-ly-qi8" id="a6F-P0-R2h">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="ZAR-SL-Tsh">
@@ -255,6 +251,7 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="ZAR-SL-Tsh" secondAttribute="trailing" constant="10" id="gdF-t8-rDJ"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="hourlutWeatherDegrees" destination="441-nE-AXS" id="fBB-Ai-xTE"/>
                                     <outlet property="hourlyForecastTemp" destination="dgX-z7-0JQ" id="jQX-3M-uZ6"/>
@@ -281,10 +278,10 @@
         <scene sceneID="DF3-SH-ndi">
             <objects>
                 <tableViewController id="fWE-gF-kX8" customClass="DaysTVController" customModule="myWeather" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="utp-dr-mlu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="549"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="utp-dr-mlu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="569"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="hyN-Wg-9xL" customClass="Shadows" customModule="myWeather" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -314,7 +311,7 @@
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="gQx-sL-ene">
-                            <rect key="frame" x="0.0" y="172" width="375" height="70"/>
+                            <rect key="frame" x="0.0" y="200" width="375" height="70"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaperBord" translatesAutoresizingMaskIntoConstraints="NO" id="Cee-bg-zI1">
@@ -350,7 +347,7 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dKH-1d-6ks" id="md9-qu-FTQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="b3P-FC-LH8">
@@ -482,6 +479,7 @@
                                         <constraint firstItem="b3P-FC-LH8" firstAttribute="leading" secondItem="md9-qu-FTQ" secondAttribute="leadingMargin" constant="10" id="rYe-g3-AtV"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="day" destination="Eme-OH-8js" id="C0z-AT-8x8"/>
                                     <outlet property="imageWeather" destination="866-zv-P7n" id="Dk6-WP-Tkz"/>
@@ -511,14 +509,14 @@
             <objects>
                 <viewController storyboardIdentifier="home" id="BYZ-38-t0r" customClass="CurrentForecastVC" customModule="myWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="549"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="569"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7o3-7h-dgl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="549"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="569"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaper1" translatesAutoresizingMaskIntoConstraints="NO" id="dLN-TE-foA">
-                                        <rect key="frame" x="0.0" y="40" width="375" height="509"/>
+                                        <rect key="frame" x="0.0" y="40" width="375" height="529"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tnY-UK-TPC">
                                         <rect key="frame" x="20" y="60" width="335" height="286"/>
@@ -811,7 +809,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJv-KU-rFT" customClass="ShadowBtn" customModule="myWeather" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="479" width="375" height="70"/>
+                                        <rect key="frame" x="0.0" y="499" width="375" height="70"/>
                                         <color key="backgroundColor" red="0.93725490196078431" green="0.60392156862745094" blue="0.60392156862745094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="clj-jt-NaJ"/>
@@ -881,14 +879,14 @@
             <objects>
                 <viewController id="lqm-eD-JTO" customClass="SettingsVC" customModule="myWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vms-ge-den">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LIW-Qk-kWu">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallpaper1" translatesAutoresizingMaskIntoConstraints="NO" id="XMl-XA-OI9">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="wtp-XY-f2c">
                                         <rect key="frame" x="20" y="50" width="335" height="179"/>
@@ -913,7 +911,7 @@
                                                             <segment title="˚C"/>
                                                             <segment title="˚F"/>
                                                         </segments>
-                                                        <color key="tintColor" red="1" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="selectedSegmentTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <connections>
                                                             <action selector="setUpTemperature:" destination="lqm-eD-JTO" eventType="valueChanged" id="2PG-kF-3rw"/>
                                                         </connections>
@@ -943,7 +941,7 @@
                                                             <segment title="hPa"/>
                                                             <segment title="mm Hg"/>
                                                         </segments>
-                                                        <color key="tintColor" red="1" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="selectedSegmentTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <connections>
                                                             <action selector="setUpPressure:" destination="lqm-eD-JTO" eventType="valueChanged" id="GTn-Ct-0Pi"/>
                                                         </connections>
@@ -975,6 +973,7 @@
                                                             <segment title="M/s"/>
                                                         </segments>
                                                         <color key="tintColor" red="1" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="selectedSegmentTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <connections>
                                                             <action selector="setUpWindSpeed:" destination="lqm-eD-JTO" eventType="valueChanged" id="aRE-VP-jFg"/>
                                                         </connections>

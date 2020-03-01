@@ -15,7 +15,7 @@ class HourlyForecast{
     private var _hourlyTypeWeather: String!
     private var _hourlyForecastTemp: Double!
     private var _hourlyForecastDegrees: String!
-    private var _currentSityName: String!
+    private var _sityName: String!
     
     var hourlyTimePeriod: String{
         if _hourlyTimePeriod == nil{
@@ -50,11 +50,11 @@ class HourlyForecast{
         return _hourlyForecastDegrees
     }
     
-    var currentSityName: String{
-        if _currentSityName == nil{
-            _currentSityName = ""
+    var sityName: String{
+        if _sityName == nil{
+            _sityName = ""
         }
-        return _currentSityName
+        return _sityName
     }
     
     init(forecastDict: Dictionary<String,Any>) {

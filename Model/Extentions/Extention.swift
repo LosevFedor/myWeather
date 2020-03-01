@@ -21,7 +21,7 @@ extension Date{
     func Hourly() -> String{
         let dataFormatter = DateFormatter()
         dataFormatter.dateStyle = .short
-        dataFormatter.dateFormat = "HH:00"
+        dataFormatter.dateFormat = "EEEE HH:00"
         return dataFormatter.string(from: self)
     }
 }

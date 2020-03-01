@@ -12,9 +12,8 @@ import CoreLocation
 
 var hourlyForecasts = [HourlyForecast]()
 
-
 class HourlyTVController: UITableViewController, CLLocationManagerDelegate {
-
+    
     @IBOutlet var currentSityName: UILabel!
     
     var hourlyForecast: HourlyForecast!
@@ -28,17 +27,25 @@ class HourlyTVController: UITableViewController, CLLocationManagerDelegate {
         
         tableView.delegate = self
         tableView.dataSource = self
-        
+                
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
+        
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         locationManager.startMonitoringSignificantLocationChanges()
         locationManager.startUpdatingLocation()
-                        
+        
+        locationAuthStatus()
     }
-
-    func locationAuthStatus(){
     
+    func locationAuthStatus(){
+        
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse{
             currentLocation = locationManager.location
             
@@ -47,7 +54,7 @@ class HourlyTVController: UITableViewController, CLLocationManagerDelegate {
             
             downloadHourlyForecastData {}
             
-            // MARK: Stop updating location
+            locationManager.stopMonitoringSignificantLocationChanges()
             locationManager.stopUpdatingLocation()
             
         }else{
@@ -55,33 +62,28 @@ class HourlyTVController: UITableViewController, CLLocationManagerDelegate {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        locationAuthStatus()
-    }
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         locationManager = manager
-
-        // Only called when variable have location data
         locationAuthStatus()
     }
     
     func downloadHourlyForecastData(completed: @escaping DownloadComplete){
-        Alamofire.request(HOURLY_WEATHER_URL, method: .get).responseJSON{ (responce) in
+        Alamofire.request(HOURLY_WEATHER_URL, method: .get).responseJSON{ [weak self] responce in
+            
+            guard let self = self else { return }
             
             let result = responce.result
             if hourlyForecasts.count < 24{
                 if let dict = result.value as? Dictionary<String,Any>{
                     if let list = dict["list"] as? [Dictionary<String, Any>]{
                         for obj in list{
-                                self.hourlyForecast = HourlyForecast(forecastDict:obj)
-                                hourlyForecasts.append(self.hourlyForecast)
+                            self.hourlyForecast = HourlyForecast(forecastDict:obj)
+                            hourlyForecasts.append(self.hourlyForecast)
                         }
                     }
                     if let city = dict["city"] as? Dictionary<String,Any>{
                         if let name = city["name"] as? String{
+                            
                             self.currentSityName.text = name
                         }
                     }
@@ -92,22 +94,14 @@ class HourlyTVController: UITableViewController, CLLocationManagerDelegate {
         }
     }
     
-    func updateHourlyTVAfterChangeSettings(){
-        hourlyForecasts.removeAll()
-        if hourlyForecasts.count == 0 { print("updated suckesuly") }
-    }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(hourlyForecasts.count)
         return hourlyForecasts.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "hourlyId", for: indexPath) as? HourlyTVCell{
-
+            
             let hourly = hourlyForecasts[indexPath.row]
             cell.configureCell(hourlyForecast: hourly)
             
@@ -117,15 +111,14 @@ class HourlyTVController: UITableViewController, CLLocationManagerDelegate {
         }
     }
     
+    func reloadHourlyTVC(){
+        viewDidLoad()
+    }
+    
     @IBAction func updateForecastInHourlyTVController(_ sender: Any) {
-  
-        print(hourlyForecasts.count)
         hourlyForecasts.removeAll()
-        print(hourlyForecasts.count)
         tableView.reloadData()
-        
         viewDidAppear(true)
-        print("reload tableViwe")
     }
     
 }

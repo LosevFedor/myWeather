@@ -21,39 +21,34 @@ class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var windSpeed: UILabel!
     @IBOutlet var humidity: UILabel!
     @IBOutlet var pressure: UILabel!
-    
     @IBOutlet var visualTypeTemperatureCurrent: UILabel!
     @IBOutlet var visualTypeTemperatureMin: UILabel!
     @IBOutlet var visualTypeTemperatureMax: UILabel!
-    
     @IBOutlet var visualTypeSpeed: UILabel!
     @IBOutlet var visualTypePressure: UILabel!
         
     var currentWeather: CurrentWeather!
-    
     var locationManager = CLLocationManager()
     var currentLocation: CLLocation!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         currentWeather = CurrentWeather()
 
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
-        locationManager.startMonitoringSignificantLocationChanges()
-        locationManager.startUpdatingLocation()
         
     }
    
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        locationManager.startMonitoringSignificantLocationChanges()
+        locationManager.startUpdatingLocation()
         locationAuthStatus()
     }
+    
     func locationAuthStatus(){
         
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse{
@@ -66,17 +61,14 @@ class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
                 self.currentWeatherToday()
             }
             
-            // MARK: Stop updating location
+            locationManager.stopMonitoringSignificantLocationChanges()
             locationManager.stopUpdatingLocation()
-            
-        }else{
             
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         locationManager = manager
-        // Only called when variable have location data
         locationAuthStatus()
     }
     
@@ -85,8 +77,6 @@ class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
         sityTemperature.text = "\(currentWeather.currentTemperature)"
         imageWeather.image = UIImage(named: currentWeather.imageWeather)
         descriptionWeather.text = currentWeather.weatherType
-        
-        precipitation(currentWeather.weatherType)
         
         maxTemperature.text = "\(currentWeather.maxWeatherTemperature)"
         minTemperature.text = "\(currentWeather.minWeatherTemperature)"
@@ -104,39 +94,12 @@ class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
         
     }
     
-    func precipitation(_ type: String){
-        switch type {
-        case "Snow":
-            setSnow(with: type)
-        case "Rain":
-            setRain(with: type)
-        default:
-            print("not snow and not rain")
-            return
-        }
-    }
-    
-    func setSnow(with type: String){
-        emitterParams(type)
-    }
-    
-    func setRain(with type: String){
-        emitterParams(type)
-    }
-    
-    func emitterParams(_ type: String){
-        let emitter = Emitter.get(with: type)
-        emitter.emitterPosition = CGPoint(x: view.frame.width/2, y: 0)
-        emitter.emitterSize = CGSize(width: view.frame.width, height: 2)
-        view.layer.addSublayer(emitter)
-    }
-    
     func reloadView() {
         self.viewDidLoad()
     }
     
     @IBAction func updateCurrentForecast(_ sender: Any){
-        self.viewDidLoad()
+         viewDidAppear(true)
     }
     
 }

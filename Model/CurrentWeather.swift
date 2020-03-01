@@ -10,9 +10,7 @@ import UIKit
 import Alamofire
 
 class CurrentWeather{
-    
-    // MARK: Private weather parameters.
-    
+        
     private var _sityName: String!
     private var _imageWeather: String!
     private var _weatherType:String!
@@ -42,7 +40,6 @@ class CurrentWeather{
         return _imageWeather
     }
     
-    // geted it
     var weatherType: String{
         if _weatherType == nil{
             _weatherType = ""
@@ -50,7 +47,6 @@ class CurrentWeather{
         return _weatherType
     }
     
-    // geted it
     var date: String{
         if _date == nil{
             _date = ""
@@ -66,7 +62,6 @@ class CurrentWeather{
         return _date
     }
     
-    // geted it
     var currentTemperature:Double{
         if _currentTemperature == nil{
             _currentTemperature = 0.0
@@ -74,7 +69,6 @@ class CurrentWeather{
         return _currentTemperature
     }
     
-    // geted it
     var minWeatherTemperature: Double{
         if _minWeatherTemperature == nil{
             _minWeatherTemperature = 0.0
@@ -82,7 +76,6 @@ class CurrentWeather{
         return _minWeatherTemperature
     }
     
-    // geted it
     var maxWeatherTemperature: Double{
         if _maxWeatherTemperature == nil{
             _maxWeatherTemperature = 0.0
@@ -111,23 +104,20 @@ class CurrentWeather{
         return _humidity
     }
     
-    
-    // MARK: use Alamofire
-    
     func downloadWeatherDetails(completed: @escaping DownloadComplete){
         
-        Alamofire.request(CURRENT_WEATHER_URL, method:.get).responseJSON { (responce) in
+        Alamofire.request(CURRENT_WEATHER_URL, method:.get).responseJSON { [weak self] responce in
+            
+            guard let self = self else { return }
+            
             let result = responce.result
             
             if let dict = result.value as? Dictionary<String, Any>{
                 
-                // MARK: Get sity name.
                 if let name = dict["name"] as? String{
                     self._sityName = name.capitalized
-                    //print(self._sityName)
                 }
                 
-                // MARK: Get weather tupes.
                 if let weather = dict["weather"] as? [Dictionary<String,Any>]{
                     if let main = weather[0]["main"] as? String{
                         self._weatherType = main.capitalized
@@ -135,7 +125,6 @@ class CurrentWeather{
                     }
                 }
                 
-                // MARK: Get weather properties.
                 if let main = dict["main"] as? Dictionary<String, Any>{
                     if let currenTemp = main["temp"] as? Double {
                         
@@ -171,8 +160,6 @@ class CurrentWeather{
                         }else{
                             self._pressure = setMmHgPressure(pressure)
                         }
-                        
-                        
                     }
                     
                     if let humidity = main["humidity"] as? Int{
@@ -180,7 +167,6 @@ class CurrentWeather{
                     }
                 }
                 
-                // MARK: Get wind.
                 if let wind = dict["wind"] as? Dictionary<String,Any>{
                     if let speed = wind["speed"] as? Double{
                         

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		841FB00C224F5B7000C9487F /* Emitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841FB00B224F5B7000C9487F /* Emitter.swift */; };
 		84276C2E22523FD500A85A77 /* GeneralVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84276C2D22523FD500A85A77 /* GeneralVC.swift */; };
 		84276C302252418D00A85A77 /* HourlyTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84276C2F2252418D00A85A77 /* HourlyTVController.swift */; };
 		84276C322252424F00A85A77 /* DaysTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84276C312252424F00A85A77 /* DaysTVController.swift */; };
@@ -38,7 +37,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		841FB00B224F5B7000C9487F /* Emitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emitter.swift; sourceTree = "<group>"; };
 		84276C2D22523FD500A85A77 /* GeneralVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralVC.swift; sourceTree = "<group>"; };
 		84276C2F2252418D00A85A77 /* HourlyTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyTVController.swift; sourceTree = "<group>"; };
 		84276C312252424F00A85A77 /* DaysTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysTVController.swift; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				8458F05B223603AD00B1E5D1 /* Constants.swift */,
-				841FB00B224F5B7000C9487F /* Emitter.swift */,
 				84D51318222D4141006CA7D9 /* Assets.xcassets */,
 			);
 			path = Resorses;
@@ -332,7 +329,6 @@
 				84C0A70E2243ADA4004FE6B1 /* CoreDataStack.swift in Sources */,
 				84D5132D222FE3BF006CA7D9 /* ContainerVC.swift in Sources */,
 				84276C362253811300A85A77 /* DaysTVCell.swift in Sources */,
-				841FB00C224F5B7000C9487F /* Emitter.swift in Sources */,
 				84FDEFA3223F37BF00D0B327 /* Location.swift in Sources */,
 				84D51314222D4140006CA7D9 /* CurrentForecastVC.swift in Sources */,
 				84C0A72A2248F7F0004FE6B1 /* SettingsTable+CoreDataProperties.swift in Sources */,
@@ -496,6 +492,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7RX34GC5CL;
 				INFOPLIST_FILE = myWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -514,6 +511,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7RX34GC5CL;
 				INFOPLIST_FILE = myWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
