@@ -56,6 +56,8 @@ class CurrentForecastVC: UIViewController, CLLocationManagerDelegate {
             
             Location.sharedInstance.latitude = currentLocation.coordinate.latitude
             Location.sharedInstance.longitude = currentLocation.coordinate.longitude
+//            Location.sharedInstance.latitude = 40.650002
+//            Location.sharedInstance.longitude = -73.949997
             
             currentWeather.downloadWeatherDetails {
                 self.currentWeatherToday()

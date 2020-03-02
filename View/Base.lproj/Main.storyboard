@@ -1019,7 +1019,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="LIW-Qk-kWu" firstAttribute="leading" secondItem="HNW-aH-0oo" secondAttribute="leading" id="54Z-MW-lTc"/>
                             <constraint firstItem="LIW-Qk-kWu" firstAttribute="top" secondItem="vms-ge-den" secondAttribute="top" id="Cn0-Gm-Tk1"/>

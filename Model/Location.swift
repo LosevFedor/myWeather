@@ -21,6 +21,7 @@ class Location{
         get{
             if _latitude == nil{
                 _latitude = 0.0
+                
             }
             return _latitude
         }
@@ -29,7 +30,7 @@ class Location{
     var longitude: Double{
         get{
                 if _longitude == nil{
-                _longitude = 0.0
+                    _longitude = 0.0
             }
             return _longitude
         }

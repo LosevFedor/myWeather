@@ -33,7 +33,7 @@ class DaysTVController: UITableViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
-
+        
         
     }
     
@@ -52,7 +52,8 @@ class DaysTVController: UITableViewController, CLLocationManagerDelegate {
             
             Location.sharedInstance.latitude = currentLocation.coordinate.latitude
             Location.sharedInstance.longitude = currentLocation.coordinate.longitude
-            
+            //            Location.sharedInstance.latitude = 40.650002
+            //            Location.sharedInstance.longitude = -73.949997
             downloadHourlyForecastData {}
             
             locationManager.stopUpdatingLocation()
